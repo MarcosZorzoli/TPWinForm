@@ -16,5 +16,11 @@ namespace TPWinForms
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            NegocioArticulo lista = new NegocioArticulo();
+            grillaArticulos.DataSource = lista.Listar();
+        }
     }
 }
