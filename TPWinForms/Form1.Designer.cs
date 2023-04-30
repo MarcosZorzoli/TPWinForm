@@ -29,27 +29,101 @@
         private void InitializeComponent()
         {
             this.grillaArticulos = new System.Windows.Forms.DataGridView();
+            this.gbxDetalles = new System.Windows.Forms.GroupBox();
+            this.btnOpciones = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).BeginInit();
+            this.gbxDetalles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // grillaArticulos
             // 
             this.grillaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaArticulos.Location = new System.Drawing.Point(86, 32);
+            this.grillaArticulos.Location = new System.Drawing.Point(12, 57);
             this.grillaArticulos.Name = "grillaArticulos";
-            this.grillaArticulos.Size = new System.Drawing.Size(580, 360);
+            this.grillaArticulos.Size = new System.Drawing.Size(733, 443);
             this.grillaArticulos.TabIndex = 0;
+            this.grillaArticulos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grillaArticulos_CellMouseDoubleClick);
+            // 
+            // gbxDetalles
+            // 
+            this.gbxDetalles.Controls.Add(this.btnOpciones);
+            this.gbxDetalles.Controls.Add(this.btnCerrar);
+            this.gbxDetalles.Controls.Add(this.pbxImagen);
+            this.gbxDetalles.Controls.Add(this.lblDescripcion);
+            this.gbxDetalles.Controls.Add(this.lblNombre);
+            this.gbxDetalles.Location = new System.Drawing.Point(784, 57);
+            this.gbxDetalles.Name = "gbxDetalles";
+            this.gbxDetalles.Size = new System.Drawing.Size(398, 443);
+            this.gbxDetalles.TabIndex = 3;
+            this.gbxDetalles.TabStop = false;
+            this.gbxDetalles.Text = "Detalles";
+            // 
+            // btnOpciones
+            // 
+            this.btnOpciones.Location = new System.Drawing.Point(270, 401);
+            this.btnOpciones.Name = "btnOpciones";
+            this.btnOpciones.Size = new System.Drawing.Size(75, 23);
+            this.btnOpciones.TabIndex = 4;
+            this.btnOpciones.Text = "Opciones";
+            this.btnOpciones.UseVisualStyleBackColor = true;
+            this.btnOpciones.Click += new System.EventHandler(this.btnOpciones_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(45, 401);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // pbxImagen
+            // 
+            this.pbxImagen.Location = new System.Drawing.Point(35, 137);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(344, 244);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagen.TabIndex = 2;
+            this.pbxImagen.TabStop = false;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(137, 104);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.TabIndex = 1;
+            this.lblDescripcion.Text = "Descripcion";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(147, 71);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 0;
+            this.lblNombre.Text = "Nombre";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1230, 601);
+            this.Controls.Add(this.gbxDetalles);
             this.Controls.Add(this.grillaArticulos);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).EndInit();
+            this.gbxDetalles.ResumeLayout(false);
+            this.gbxDetalles.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -57,6 +131,12 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grillaArticulos;
+        private System.Windows.Forms.GroupBox gbxDetalles;
+        private System.Windows.Forms.Button btnOpciones;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.PictureBox pbxImagen;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblNombre;
     }
 }
 

@@ -17,6 +17,7 @@ namespace TPWinForms
         public int IdMarca { get; set; }
         public int IdCategoria { get; set; }
         public decimal Precio { get; set; }
+        public string UrlImagen { get; set; }
 
     }
 }
