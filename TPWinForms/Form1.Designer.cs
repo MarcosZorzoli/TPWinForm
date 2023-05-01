@@ -39,6 +39,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.agregarArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarArticuloToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.porNombreToolStripMenuItem2A = new System.Windows.Forms.ToolStripMenuItem();
+            this.porMarcaToolStripMenuItem2B = new System.Windows.Forms.ToolStripMenuItem();
+            this.porCódigoToolStripMenuItem2C = new System.Windows.Forms.ToolStripMenuItem();
+            this.porCategoríaToolStripMenuItem2D = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).BeginInit();
             this.gbxDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
@@ -128,7 +133,8 @@
             // agregarArticuloToolStripMenuItem
             // 
             this.agregarArticuloToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarArticuloToolStripMenuItem1});
+            this.agregarArticuloToolStripMenuItem1,
+            this.buscarToolStripMenuItem2});
             this.agregarArticuloToolStripMenuItem.Name = "agregarArticuloToolStripMenuItem";
             this.agregarArticuloToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.agregarArticuloToolStripMenuItem.Text = "Articulos";
@@ -139,6 +145,45 @@
             this.agregarArticuloToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.agregarArticuloToolStripMenuItem1.Text = "Agregar Articulo";
             this.agregarArticuloToolStripMenuItem1.Click += new System.EventHandler(this.agregarArticuloToolStripMenuItem1_Click);
+            // 
+            // buscarToolStripMenuItem2
+            // 
+            this.buscarToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.porNombreToolStripMenuItem2A,
+            this.porMarcaToolStripMenuItem2B,
+            this.porCódigoToolStripMenuItem2C,
+            this.porCategoríaToolStripMenuItem2D});
+            this.buscarToolStripMenuItem2.Name = "buscarToolStripMenuItem2";
+            this.buscarToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.buscarToolStripMenuItem2.Text = "Buscar";
+            // 
+            // porNombreToolStripMenuItem2A
+            // 
+            this.porNombreToolStripMenuItem2A.Name = "porNombreToolStripMenuItem2A";
+            this.porNombreToolStripMenuItem2A.Size = new System.Drawing.Size(180, 22);
+            this.porNombreToolStripMenuItem2A.Text = "Por nombre";
+            this.porNombreToolStripMenuItem2A.Click += new System.EventHandler(this.porNombreToolStripMenuItem2A_Click);
+            // 
+            // porMarcaToolStripMenuItem2B
+            // 
+            this.porMarcaToolStripMenuItem2B.Name = "porMarcaToolStripMenuItem2B";
+            this.porMarcaToolStripMenuItem2B.Size = new System.Drawing.Size(180, 22);
+            this.porMarcaToolStripMenuItem2B.Text = "Por marca";
+            this.porMarcaToolStripMenuItem2B.Click += new System.EventHandler(this.porMarcaToolStripMenuItem2B_Click);
+            // 
+            // porCódigoToolStripMenuItem2C
+            // 
+            this.porCódigoToolStripMenuItem2C.Name = "porCódigoToolStripMenuItem2C";
+            this.porCódigoToolStripMenuItem2C.Size = new System.Drawing.Size(180, 22);
+            this.porCódigoToolStripMenuItem2C.Text = "Por código";
+            this.porCódigoToolStripMenuItem2C.Click += new System.EventHandler(this.porCódigoToolStripMenuItem2C_Click);
+            // 
+            // porCategoríaToolStripMenuItem2D
+            // 
+            this.porCategoríaToolStripMenuItem2D.Name = "porCategoríaToolStripMenuItem2D";
+            this.porCategoríaToolStripMenuItem2D.Size = new System.Drawing.Size(180, 22);
+            this.porCategoríaToolStripMenuItem2D.Text = "Por categoría";
+            this.porCategoríaToolStripMenuItem2D.Click += new System.EventHandler(this.porCategoríaToolStripMenuItem2D_Click);
             // 
             // Form1
             // 
@@ -177,6 +222,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem agregarArticuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarArticuloToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem porNombreToolStripMenuItem2A;
+        private System.Windows.Forms.ToolStripMenuItem porMarcaToolStripMenuItem2B;
+        private System.Windows.Forms.ToolStripMenuItem porCódigoToolStripMenuItem2C;
+        private System.Windows.Forms.ToolStripMenuItem porCategoríaToolStripMenuItem2D;
     }
 }
 

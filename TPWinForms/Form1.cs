@@ -78,5 +78,29 @@ namespace TPWinForms
             frnAgregar ventanaAgregar = new frnAgregar();
             ventanaAgregar.ShowDialog();
         }
+
+        private void porNombreToolStripMenuItem2A_Click(object sender, EventArgs e)
+        {
+                Busqueda ventanaBusqueda = new Busqueda();
+                ventanaBusqueda.ShowDialog();
+        }
+
+        private void porMarcaToolStripMenuItem2B_Click(object sender, EventArgs e)
+        {
+            Busqueda ventanaBusqueda = new Busqueda();
+            ventanaBusqueda.ShowDialog();
+        }
+
+        private void porCódigoToolStripMenuItem2C_Click(object sender, EventArgs e)
+        {
+            Busqueda ventanaBusqueda = new Busqueda();
+            ventanaBusqueda.ShowDialog();
+        }
+
+        private void porCategoríaToolStripMenuItem2D_Click(object sender, EventArgs e)
+        {
+            Busqueda ventanaBusqueda = new Busqueda();
+            ventanaBusqueda.ShowDialog();
+        }
     }
 }

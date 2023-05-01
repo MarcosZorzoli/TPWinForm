@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Articulo.cs" />
+    <Compile Include="Busqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda.Designer.cs">
+      <DependentUpon>Busqueda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="NegocioArticulo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Busqueda.resx">
+      <DependentUpon>Busqueda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
