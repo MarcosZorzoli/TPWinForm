@@ -36,9 +36,13 @@
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.agregarArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarArticuloToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).BeginInit();
             this.gbxDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grillaArticulos
@@ -111,6 +115,31 @@
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarArticuloToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1230, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // agregarArticuloToolStripMenuItem
+            // 
+            this.agregarArticuloToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarArticuloToolStripMenuItem1});
+            this.agregarArticuloToolStripMenuItem.Name = "agregarArticuloToolStripMenuItem";
+            this.agregarArticuloToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.agregarArticuloToolStripMenuItem.Text = "Articulos";
+            // 
+            // agregarArticuloToolStripMenuItem1
+            // 
+            this.agregarArticuloToolStripMenuItem1.Name = "agregarArticuloToolStripMenuItem1";
+            this.agregarArticuloToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.agregarArticuloToolStripMenuItem1.Text = "Agregar Articulo";
+            this.agregarArticuloToolStripMenuItem1.Click += new System.EventHandler(this.agregarArticuloToolStripMenuItem1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,7 +147,9 @@
             this.ClientSize = new System.Drawing.Size(1230, 601);
             this.Controls.Add(this.gbxDetalles);
             this.Controls.Add(this.grillaArticulos);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormApp";
@@ -127,7 +158,10 @@
             this.gbxDetalles.ResumeLayout(false);
             this.gbxDetalles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -140,6 +174,9 @@
         private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem agregarArticuloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarArticuloToolStripMenuItem1;
     }
 }
 

@@ -19,7 +19,7 @@ namespace TPWinForms
 
             try
 			{
-                conexion.ConnectionString = "server=DESKTOP-E8MHNDC\\SQLLAB3; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=TOBI\\SQLEXPRESST; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo";
                 comando.Connection = conexion;

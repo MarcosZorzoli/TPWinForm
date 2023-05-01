@@ -72,5 +72,11 @@ namespace TPWinForms
                 MessageBox.Show("SOY LA VENTANA PARA EDITAR ARTICULOS");
             
         }
+
+        private void agregarArticuloToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frnAgregar ventanaAgregar = new frnAgregar();
+            ventanaAgregar.ShowDialog();
+        }
     }
 }
