@@ -25,7 +25,6 @@ namespace TPWinForms
             myList = servicio.Listar();
             grillaArticulos.DataSource = myList;
             gbxDetalles.Visible = false;
-
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -38,27 +37,25 @@ namespace TPWinForms
 
         }
 
-        private void grillaArticulos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void grillaArticulos_SelectionChanged(object sender, EventArgs e)
         {
-           
-                gbxDetalles.Visible = true;
-                Articulo item = (Articulo)grillaArticulos.CurrentRow.DataBoundItem;
+            gbxDetalles.Visible = true;
+            Articulo item = (Articulo)grillaArticulos.CurrentRow.DataBoundItem;
 
-                lblNombre.Text = item.Nombre;
-                lblDescripcion.Text = item.Descripcion;
-                try
-                {
-                    pbxImagen.Load(item.UrlImagen);
-                }
+            lblNombre.Text = item.Nombre;
+            lblDescripcion.Text = item.Descripcion;
+            try
+            {
+                pbxImagen.Load(item.UrlImagen);
+            }
 
-                catch
-                {
+            catch
+            {
 
-                    pbxImagen.Load("https://www.tibs.org.tw/images/default.jpg");
-                    //pbxImagen.Load("https://intercompras.com/product_thumb_keepratio_2.php?img=images/product/SONY_KDL-55W950A.jpg&w=650&h=450"); 
-                }
+                pbxImagen.Load("https://www.tibs.org.tw/images/default.jpg");
+                //pbxImagen.Load("https://intercompras.com/product_thumb_keepratio_2.php?img=images/product/SONY_KDL-55W950A.jpg&w=650&h=450"); 
+            }
 
-            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -81,26 +78,28 @@ namespace TPWinForms
 
         private void porNombreToolStripMenuItem2A_Click(object sender, EventArgs e)
         {
-                Busqueda ventanaBusqueda = new Busqueda();
+                Busqueda ventanaBusqueda = new Busqueda(1);
                 ventanaBusqueda.ShowDialog();
         }
 
         private void porMarcaToolStripMenuItem2B_Click(object sender, EventArgs e)
         {
-            Busqueda ventanaBusqueda = new Busqueda();
+            Busqueda ventanaBusqueda = new Busqueda(2);
             ventanaBusqueda.ShowDialog();
         }
 
         private void porCódigoToolStripMenuItem2C_Click(object sender, EventArgs e)
         {
-            Busqueda ventanaBusqueda = new Busqueda();
+            Busqueda ventanaBusqueda = new Busqueda(3);
             ventanaBusqueda.ShowDialog();
         }
 
         private void porCategoríaToolStripMenuItem2D_Click(object sender, EventArgs e)
         {
-            Busqueda ventanaBusqueda = new Busqueda();
+            Busqueda ventanaBusqueda = new Busqueda(4);
             ventanaBusqueda.ShowDialog();
         }
+
+
     }
 }

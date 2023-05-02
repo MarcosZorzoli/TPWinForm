@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace TPWinForms
 {
     public partial class Busqueda : Form
     {
-        public Busqueda()
+        public Busqueda(int op)
         {
             InitializeComponent();
+            if (op == 1) 
+            {
+                labelBusqueda1.Visible = true;
+            }
+            else if (op == 2)
+            {
+                labelBusqueda2.Visible = true;
+            }
+            else if (op == 3) 
+            { 
+                labelBusqueda3.Visible = true;
+            }
+            else 
+            {
+                labelBusqueda4.Visible = true;
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -25,7 +43,6 @@ namespace TPWinForms
             }
             else
             {
-                
                 return;
             }
         }
