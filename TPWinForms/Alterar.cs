@@ -17,15 +17,13 @@ public partial class Alterar : Form
         private System.Windows.Forms.DataGridView grilla;
         public Alterar()
         {
-            
-
             InitializeComponent();
         }
         public void setArticulo(ref Articulo obj, ref System.Windows.Forms.DataGridView g ) { 
             this.obj = obj;
-                this.grilla = g;
-                
+            this.grilla = g;             
         }
+
         private void Alterar_Load(object sender, EventArgs e)
         {
             cbMarcaAlterar.Items.Add("Samsung");

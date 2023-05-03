@@ -18,7 +18,7 @@ namespace TPWinForms
             InitializeComponent();
         }
 
-        private List<Articulo> myList = new List<Articulo>();
+        public List<Articulo> myList = new List<Articulo>();
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -69,6 +69,7 @@ namespace TPWinForms
         private void agregarArticuloToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frnAgregar ventanaAgregar = new frnAgregar();
+            ventanaAgregar.setGrilla(ref grillaArticulos, ref myList);
             ventanaAgregar.ShowDialog();
         }
 

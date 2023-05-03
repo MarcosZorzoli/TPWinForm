@@ -217,6 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1230, 601);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.gbxDetalles);
@@ -240,8 +241,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView grillaArticulos;
         private System.Windows.Forms.GroupBox gbxDetalles;
         private System.Windows.Forms.Button btnAlter;
         private System.Windows.Forms.Button btnCerrar;
@@ -258,6 +257,7 @@
         private System.Windows.Forms.ToolStripMenuItem porCategoríaToolStripMenuItem2D;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.DataGridView grillaArticulos;
     }
 }
 

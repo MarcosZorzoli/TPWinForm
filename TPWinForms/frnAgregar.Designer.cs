@@ -149,6 +149,7 @@
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(176, 21);
             this.cbMarca.TabIndex = 10;
+            this.cbMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbMarca_KeyPress);
             // 
             // numID
             // 
@@ -190,7 +191,9 @@
             this.tbPrecio.Location = new System.Drawing.Point(141, 274);
             this.tbPrecio.Name = "tbPrecio";
             this.tbPrecio.Size = new System.Drawing.Size(147, 20);
-            this.tbPrecio.TabIndex = 16;
+            this.tbPrecio.TabIndex = 32;
+            this.tbPrecio.Text = " 0";
+            this.tbPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrecio_KeyPress);
             // 
             // label1
             // 
