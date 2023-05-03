@@ -14,6 +14,8 @@ namespace TPWinForms
 {
     public partial class Busqueda : Form
     {
+        public string palabra { set; get; }
+
         public Busqueda(int op)
         {
             InitializeComponent();
@@ -43,8 +45,11 @@ namespace TPWinForms
             }
             else
             {
-                return;
+                palabra = textBox1.Text;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
+
     }
 }

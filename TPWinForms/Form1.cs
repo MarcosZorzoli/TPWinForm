@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace TPWinForms
 {
@@ -73,8 +74,19 @@ namespace TPWinForms
 
         private void porNombreToolStripMenuItem2A_Click(object sender, EventArgs e)
         {
-                Busqueda ventanaBusqueda = new Busqueda(1);
-                ventanaBusqueda.ShowDialog();
+            string palabra;
+            Busqueda ventanaBusqueda = new Busqueda(1);
+            if (ventanaBusqueda.ShowDialog() == DialogResult.OK)
+            {
+                palabra = ventanaBusqueda.palabra;
+                NegocioArticulo servicio = new NegocioArticulo();
+                myList = servicio.ListarXNombre(palabra);
+                grillaArticulos.DataSource = myList;
+                gbxDetalles.Visible = false;
+                checkBox1.Visible = true;
+
+            }
+
         }
 
         private void porMarcaToolStripMenuItem2B_Click(object sender, EventArgs e)
@@ -124,6 +136,17 @@ namespace TPWinForms
                 servicio.EiminarArticulo(ref item,ref myList);
                 grillaArticulos.Refresh();
             }
+        }
+
+        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            checkBox1.Checked = true;
+            checkBox1.Visible = false;
+            NegocioArticulo servicio = new NegocioArticulo();
+            myList = servicio.Listar();
+            grillaArticulos.DataSource = myList;
+            gbxDetalles.Visible = false;
+            
         }
     }
 }

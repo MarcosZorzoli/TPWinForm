@@ -19,7 +19,7 @@ namespace TPWinForms
 
             try
             {
-                conexion.ConnectionString = "server=DESKTOP-E8MHNDC\\SQLLAB3; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=DESKTOP-6024H1Q; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo";
                 comando.Connection = conexion;
@@ -72,7 +72,6 @@ namespace TPWinForms
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
 
-
             try
             {
                 conexion.ConnectionString = "server=DESKTOP-6024H1Q; database=CATALOGO_P3_DB; integrated security=true";
@@ -84,8 +83,8 @@ namespace TPWinForms
                 while (lector.Read())
                 {
                     Articulo aux = new Articulo();
-
-                    if (nombre == (string)lector["Nombre"])
+                    string nnombre = (string)lector["Nombre"];
+                    if (nnombre.IndexOf(nombre, StringComparison.OrdinalIgnoreCase) > -1)
                     {
                         aux.Id = lector.GetInt32(0);
                         aux.Codigo = (string)lector["Codigo"];
@@ -95,24 +94,22 @@ namespace TPWinForms
                         aux.IdCategoria = lector.GetInt32(5);
                         aux.Precio = lector.GetDecimal(6);
                         aux.UrlImagen = (string)lector["ImagenUrl"];
-                    }
-
-                    if (lista.Count == 0)
-                    {
-                        lista.Add(aux);
-                    }
-                    else
+                        if (lista.Count == 0)
+                        {
+                            lista.Add(aux);
+                        }
+                        else
 
                     if (lista.Last().Id == aux.Id)
-                    {
+                        {
 
-                        lista.Remove(aux);
+                            lista.Remove(aux);
+                        }
+                        else
+                        {
+                            lista.Add(aux);
+                        }
                     }
-                    else
-                    {
-                        lista.Add(aux);
-                    }
-
 
                 }
                 conexion.Close();
@@ -125,6 +122,8 @@ namespace TPWinForms
             }
 
         }
+
+    
         public void EiminarArticulo(ref Articulo tarjet, ref List<Articulo> listaActual)
         {
             List<Articulo> aux = new List<Articulo>();
@@ -140,6 +139,7 @@ namespace TPWinForms
             listaActual = aux;  
 
         }
+
 
     }
 }
