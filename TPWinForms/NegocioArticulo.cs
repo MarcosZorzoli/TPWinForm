@@ -11,15 +11,15 @@ namespace TPWinForms
     {
         public List<Articulo> Listar()
         {
-			List<Articulo> lista = new List<Articulo>();
+            List<Articulo> lista = new List<Articulo>();
             SqlConnection conexion = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             SqlDataReader lector;
-            
+
 
             try
-			{
-                conexion.ConnectionString = "server=DESKTOP-6024H1Q; database=CATALOGO_P3_DB; integrated security=true";
+            {
+                conexion.ConnectionString = "server=DESKTOP-E8MHNDC\\SQLLAB3; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo";
                 comando.Connection = conexion;
@@ -57,11 +57,11 @@ namespace TPWinForms
                 conexion.Close();
                 return lista;
             }
-			catch (Exception)
-			{
+            catch (Exception)
+            {
 
-				throw;
-			}
+                throw;
+            }
 
         }
 
@@ -96,7 +96,7 @@ namespace TPWinForms
                         aux.Precio = lector.GetDecimal(6);
                         aux.UrlImagen = (string)lector["ImagenUrl"];
                     }
-                   
+
                     if (lista.Count == 0)
                     {
                         lista.Add(aux);
@@ -123,6 +123,21 @@ namespace TPWinForms
 
                 throw;
             }
+
+        }
+        public void EiminarArticulo(ref Articulo tarjet, ref List<Articulo> listaActual)
+        {
+            List<Articulo> aux = new List<Articulo>();
+            int contador = 0;
+            for (int i = 0; i < listaActual.Count; i++)
+            {
+                if (listaActual[i] != tarjet)
+                {
+                    contador++;
+                    aux.Add(listaActual[i]);
+                }
+            }
+            listaActual = aux;  
 
         }
 

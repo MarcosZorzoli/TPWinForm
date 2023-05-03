@@ -63,12 +63,7 @@ namespace TPWinForms
             gbxDetalles.Visible = false;
         }
 
-        private void btnOpciones_Click(object sender, EventArgs e)
-        {
-           
-                MessageBox.Show("SOY LA VENTANA PARA EDITAR ARTICULOS");
-            
-        }
+      
 
         private void agregarArticuloToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -100,6 +95,35 @@ namespace TPWinForms
             ventanaBusqueda.ShowDialog();
         }
 
+        private void btnAlter_Click(object sender, EventArgs e)
+        {
+            Alterar ventanaAlter = new Alterar();
+            Articulo item = (Articulo)grillaArticulos.CurrentRow.DataBoundItem;
+            ventanaAlter.setArticulo(ref item,ref grillaArticulos);
+            ventanaAlter.ShowDialog();
+        }
 
+        private void grillaArticulos_Enter(object sender, EventArgs e)
+        {
+            grillaArticulos.DataSource = myList;
+            gbxDetalles.Visible = false;
+            grillaArticulos.Refresh();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+           
+
+            DialogResult dialogResult = MessageBox.Show("Seguro que quiere Elminar este Articulo?", "Confirmar", MessageBoxButtons.OKCancel);
+
+            if (dialogResult == DialogResult.OK)
+            {
+                Articulo item = (Articulo)grillaArticulos.CurrentRow.DataBoundItem;
+               
+                NegocioArticulo servicio = new NegocioArticulo();
+                servicio.EiminarArticulo(ref item,ref myList);
+                grillaArticulos.Refresh();
+            }
+        }
     }
 }

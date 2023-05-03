@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.grillaArticulos = new System.Windows.Forms.DataGridView();
             this.gbxDetalles = new System.Windows.Forms.GroupBox();
-            this.btnOpciones = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAlter = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -58,10 +59,12 @@
             this.grillaArticulos.Size = new System.Drawing.Size(733, 443);
             this.grillaArticulos.TabIndex = 0;
             this.grillaArticulos.SelectionChanged += new System.EventHandler(this.grillaArticulos_SelectionChanged);
+            this.grillaArticulos.Enter += new System.EventHandler(this.grillaArticulos_Enter);
             // 
             // gbxDetalles
             // 
-            this.gbxDetalles.Controls.Add(this.btnOpciones);
+            this.gbxDetalles.Controls.Add(this.btnDelete);
+            this.gbxDetalles.Controls.Add(this.btnAlter);
             this.gbxDetalles.Controls.Add(this.btnCerrar);
             this.gbxDetalles.Controls.Add(this.pbxImagen);
             this.gbxDetalles.Controls.Add(this.lblDescripcion);
@@ -73,15 +76,25 @@
             this.gbxDetalles.TabStop = false;
             this.gbxDetalles.Text = "Detalles";
             // 
-            // btnOpciones
+            // btnDelete
             // 
-            this.btnOpciones.Location = new System.Drawing.Point(270, 401);
-            this.btnOpciones.Name = "btnOpciones";
-            this.btnOpciones.Size = new System.Drawing.Size(75, 23);
-            this.btnOpciones.TabIndex = 4;
-            this.btnOpciones.Text = "Opciones";
-            this.btnOpciones.UseVisualStyleBackColor = true;
-            this.btnOpciones.Click += new System.EventHandler(this.btnOpciones_Click);
+            this.btnDelete.Location = new System.Drawing.Point(160, 401);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnAlter
+            // 
+            this.btnAlter.Location = new System.Drawing.Point(270, 401);
+            this.btnAlter.Name = "btnAlter";
+            this.btnAlter.Size = new System.Drawing.Size(75, 23);
+            this.btnAlter.TabIndex = 4;
+            this.btnAlter.Text = "Modificar";
+            this.btnAlter.UseVisualStyleBackColor = true;
+            this.btnAlter.Click += new System.EventHandler(this.btnAlter_Click);
             // 
             // btnCerrar
             // 
@@ -105,7 +118,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(137, 104);
+            this.lblDescripcion.Location = new System.Drawing.Point(163, 104);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 1;
@@ -114,7 +127,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(147, 71);
+            this.lblNombre.Location = new System.Drawing.Point(163, 71);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 0;
@@ -214,7 +227,7 @@
 
         private System.Windows.Forms.DataGridView grillaArticulos;
         private System.Windows.Forms.GroupBox gbxDetalles;
-        private System.Windows.Forms.Button btnOpciones;
+        private System.Windows.Forms.Button btnAlter;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.Label lblDescripcion;
@@ -227,6 +240,7 @@
         private System.Windows.Forms.ToolStripMenuItem porMarcaToolStripMenuItem2B;
         private System.Windows.Forms.ToolStripMenuItem porCódigoToolStripMenuItem2C;
         private System.Windows.Forms.ToolStripMenuItem porCategoríaToolStripMenuItem2D;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

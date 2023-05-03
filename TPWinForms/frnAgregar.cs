@@ -38,7 +38,7 @@ namespace TPWinForms
             aux.Nombre = tbNombre.Text;
             aux.Descripcion = tbDescripcion.Text;
             aux.IdMarca = cbMarca.SelectedIndex;
-            
+            aux.Precio = Convert.ToDecimal(this.tbPrecio.Text);
         }
     }
 }
