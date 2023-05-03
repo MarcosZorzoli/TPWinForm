@@ -15,6 +15,7 @@ namespace TPWinForms
     public partial class Busqueda : Form
     {
         public string palabra { set; get; }
+        public int ID { set; get; }
 
         public Busqueda(int op)
         {
@@ -39,16 +40,24 @@ namespace TPWinForms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox1.Text))
+            switch (this.op)
             {
-                MessageBox.Show("Primero ingrese información");
+                case 1:
+                    {
+                        if (string.IsNullOrEmpty(textBox1.Text))
+                        {
+                            MessageBox.Show("Primero ingrese información");
+                        }
+                        else
+                        {
+                            palabra = textBox1.Text;
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                    }break;
+                
             }
-            else
-            {
-                palabra = textBox1.Text;
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
+            
         }
 
     }

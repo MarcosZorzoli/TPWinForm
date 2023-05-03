@@ -92,8 +92,18 @@ namespace TPWinForms
 
         private void porMarcaToolStripMenuItem2B_Click(object sender, EventArgs e)
         {
+            int ID;
             Busqueda ventanaBusqueda = new Busqueda(2);
-            ventanaBusqueda.ShowDialog();
+            if (ventanaBusqueda.ShowDialog() == DialogResult.OK)
+            {
+                ID = ventanaBusqueda.ID;
+                NegocioArticulo servicio = new NegocioArticulo();
+                myList = servicio.ListarXMarca(ID);
+                grillaArticulos.DataSource = myList;
+                gbxDetalles.Visible = false;
+                checkBox1.Visible = true;
+
+            }
         }
 
         private void porCódigoToolStripMenuItem2C_Click(object sender, EventArgs e)
