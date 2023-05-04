@@ -24,8 +24,11 @@ namespace TPWinForms
         {
             NegocioArticulo servicio = new NegocioArticulo();
             myList = servicio.Listar();
+           
             grillaArticulos.DataSource = myList;
             gbxDetalles.Visible = false;
+            
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -68,8 +71,17 @@ namespace TPWinForms
 
         private void agregarArticuloToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            /*frnAgregar ventanaAgregar = new frnAgregar();
+            ventanaAgregar.setGrilla(ref myList,ref grillaArticulos);
+            ventanaAgregar.ShowDialog();*/
+            NegocioArticulo servicio = new NegocioArticulo();
+            Articulo aux = new Articulo();
+            servicio.AgregarArticulo(ref aux, ref myList);
             frnAgregar ventanaAgregar = new frnAgregar();
-            ventanaAgregar.setGrilla(ref grillaArticulos, ref myList);
+            Articulo item = myList.Last();
+            ventanaAgregar.setGrilla(ref myList, ref grillaArticulos, ref item);
+           
+           
             ventanaAgregar.ShowDialog();
         }
 
@@ -128,9 +140,19 @@ namespace TPWinForms
 
         private void grillaArticulos_Enter(object sender, EventArgs e)
         {
-            grillaArticulos.DataSource = myList;
+            for (int i = 0; i < myList.Count; i++)
+            {
+                if (myList[i].Id == 0)
+                {
+                    Articulo aux = myList[i];
+
+                    NegocioArticulo servicio = new NegocioArticulo();
+                    servicio.EiminarArticulo(ref aux, ref myList);
+                }
+            }
+          
             gbxDetalles.Visible = false;
-            grillaArticulos.Refresh();
+            grillaArticulos.DataSource = myList;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -145,7 +167,7 @@ namespace TPWinForms
                
                 NegocioArticulo servicio = new NegocioArticulo();
                 servicio.EiminarArticulo(ref item,ref myList);
-                grillaArticulos.Refresh();
+                grillaArticulos.DataSource = myList;
             }
         }
 
@@ -158,6 +180,26 @@ namespace TPWinForms
             grillaArticulos.DataSource = myList;
             gbxDetalles.Visible = false;
             
+        }
+
+        private void reset_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < myList.Count; i++)
+            {
+                if (myList[i].Id == 0)
+                {
+                    Articulo aux = myList[i];
+
+                    NegocioArticulo servicio = new NegocioArticulo();
+                    servicio.EiminarArticulo(ref aux, ref myList);
+                }
+            }
+            grillaArticulos.DataSource = myList;
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            grillaArticulos.DataSource = myList;
         }
     }
 }

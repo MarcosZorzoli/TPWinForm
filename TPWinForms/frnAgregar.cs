@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,18 @@ namespace TPWinForms
 {
     public partial class frnAgregar : Form 
     {
-        private System.Windows.Forms.DataGridView dgvAgregar;
+        private System.Windows.Forms.DataGridView grilla;
         private List<Articulo> articulos;
+        private Articulo creado;
         public frnAgregar()
         {
             InitializeComponent();
         }
-        public void setGrilla(ref System.Windows.Forms.DataGridView grid, ref List<Articulo> listaArticulo)
+        public void setGrilla(ref List<Articulo> obj, ref System.Windows.Forms.DataGridView g,ref Articulo last)
         {
-            this.dgvAgregar = grid;
-            this.articulos = listaArticulo;
+            this.articulos = obj;
+            this.grilla = g;
+            this.creado = last;
         }
         private void frnAgregar_Load(object sender, EventArgs e)
         {
@@ -31,33 +34,64 @@ namespace TPWinForms
             cbMarca.Items.Add("Sony");
             cbMarca.Items.Add("Huawey");
             cbMarca.Items.Add("Motorola");
+
+            this.tbNombre.Text = " ";
+
+            this.numID.Value = 0;
+            this.tbCodigo.Text = " ";
+            this.tbDescripcion.Text = " ";
+           
+                this.cbMarca.Text = cbMarca.Items[1].ToString();
+            
+            
+
+            this.tbPrecio.Text = "0";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+            grilla.Refresh();
         }
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
-            Form1 formReceptor = new Form1();
+            DialogResult dialogResult = MessageBox.Show("Seguro que quiere Agregar este Articulo?", "Confirmar", MessageBoxButtons.OKCancel);
+
+            if (dialogResult == DialogResult.OK)
+            {
+
+               
+                creado.Id = (int)this.numID.Value;
+                creado.Codigo = this.tbCodigo.Text;
+                creado.Nombre = this.tbNombre.Text;
+                creado.Descripcion = this.tbDescripcion.Text;
+                creado.IdMarca = this.cbMarca.SelectedIndex;
+                creado.Precio = Convert.ToDecimal(this.tbPrecio.Text);
+                
+                
+               
+
+               
+
+               
+
+                
+
+                grilla.Refresh();
+                this.Close();
+            }else
+            {
+                NegocioArticulo servicio = new NegocioArticulo();
+
+                
+                servicio.EiminarArticulo(ref creado, ref articulos);
+                grilla.DataSource = articulos;
+                this.Close();
+
+            }
 
 
-            Articulo aux = new Articulo();
-            aux.Id = (int)numID.Value;
-            aux.Codigo = tbCodigo.Text;
-            aux.Nombre = tbNombre.Text;
-            aux.Descripcion = tbDescripcion.Text;
-            aux.IdMarca = cbMarca.SelectedIndex;
-            aux.Precio = Convert.ToDecimal(this.tbPrecio.Text);
-
-            articulos.Add(aux);
-
-            dgvAgregar.DataSource = aux;
-
-            this.Close();
-
-            dgvAgregar.Refresh();
         }
 
         private void tbPrecio_KeyPress(object sender, KeyPressEventArgs e)

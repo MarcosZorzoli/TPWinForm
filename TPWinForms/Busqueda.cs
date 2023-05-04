@@ -40,24 +40,24 @@ namespace TPWinForms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            switch (this.op)
-            {
-                case 1:
-                    {
-                        if (string.IsNullOrEmpty(textBox1.Text))
-                        {
-                            MessageBox.Show("Primero ingrese información");
-                        }
-                        else
-                        {
-                            palabra = textBox1.Text;
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
-                        }
-                    }break;
-                
-            }
-            
+            /*   switch (this.op)
+             {
+                 case 1:
+                     {
+                         if (string.IsNullOrEmpty(textBox1.Text))
+                         {
+                             MessageBox.Show("Primero ingrese información");
+                         }
+                         else
+                         {
+                             palabra = textBox1.Text;
+                             this.DialogResult = DialogResult.OK;
+                             this.Close();
+                         }
+                     }break;
+
+             } */
+
         }
 
     }

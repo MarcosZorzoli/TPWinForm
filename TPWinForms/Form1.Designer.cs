@@ -46,6 +46,7 @@
             this.porCódigoToolStripMenuItem2C = new System.Windows.Forms.ToolStripMenuItem();
             this.porCategoríaToolStripMenuItem2D = new System.Windows.Forms.ToolStripMenuItem();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).BeginInit();
             this.gbxDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
@@ -54,11 +55,14 @@
             // 
             // grillaArticulos
             // 
+            this.grillaArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grillaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaArticulos.Location = new System.Drawing.Point(12, 57);
+            this.grillaArticulos.MultiSelect = false;
             this.grillaArticulos.Name = "grillaArticulos";
             this.grillaArticulos.Size = new System.Drawing.Size(733, 443);
             this.grillaArticulos.TabIndex = 0;
+            this.grillaArticulos.UseWaitCursor = true;
             this.grillaArticulos.SelectionChanged += new System.EventHandler(this.grillaArticulos_SelectionChanged);
             this.grillaArticulos.Enter += new System.EventHandler(this.grillaArticulos_Enter);
             // 
@@ -213,12 +217,23 @@
             this.checkBox1.Visible = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
+            // reset
+            // 
+            this.reset.Location = new System.Drawing.Point(267, 519);
+            this.reset.Name = "reset";
+            this.reset.Size = new System.Drawing.Size(156, 23);
+            this.reset.TabIndex = 6;
+            this.reset.Text = "Actualizar Lista";
+            this.reset.UseVisualStyleBackColor = true;
+            this.reset.Click += new System.EventHandler(this.reset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1230, 601);
+            this.Controls.Add(this.reset);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.gbxDetalles);
             this.Controls.Add(this.grillaArticulos);
@@ -228,6 +243,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormApp";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).EndInit();
             this.gbxDetalles.ResumeLayout(false);
@@ -258,6 +274,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.CheckBox checkBox1;
         public System.Windows.Forms.DataGridView grillaArticulos;
+        private System.Windows.Forms.Button reset;
     }
 }
 

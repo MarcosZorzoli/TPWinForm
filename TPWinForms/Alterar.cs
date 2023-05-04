@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,16 @@ public partial class Alterar : Form
             this.numID.Value = obj.Id;
             this.tbCodigo.Text = obj.Codigo;
             this.tbDescripcion.Text = obj.Descripcion;
-            this.cbMarcaAlterar.Text = cbMarcaAlterar.Items[obj.IdMarca].ToString();
+            try
+            {
+                this.cbMarcaAlterar.Text = cbMarcaAlterar.Items[obj.IdMarca].ToString();
+            }
+            catch (Exception)
+            {
+                this.cbMarcaAlterar.Text = cbMarcaAlterar.Items[1].ToString();
+                throw;
+            }
+           
             this.tbPrecio.Text = obj.Precio.ToString();
 
 
@@ -79,8 +89,10 @@ public partial class Alterar : Form
                 obj.IdMarca = cbMarcaAlterar.SelectedIndex;
 
                 obj.Precio = Convert.ToDecimal(this.tbPrecio.Text);
-                this.Close();
                 grilla.Refresh();
+                this.Close();
+                
+
             }
           
            
