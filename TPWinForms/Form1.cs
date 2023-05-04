@@ -19,6 +19,7 @@ namespace TPWinForms
         }
 
         public List<Articulo> myList = new List<Articulo>();
+        public List<Articulo> ListaAnterior = new List<Articulo>();
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -28,17 +29,12 @@ namespace TPWinForms
             grillaArticulos.DataSource = myList;
             gbxDetalles.Visible = false;
             
-            
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        public void AddArticuloToGrid(Articulo newData)
         {
-
-        }
-
-        private void agregarArticuloToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            NegocioArticulo servicio = new NegocioArticulo();
+            servicio.AgregarArticulo(ref newData, ref myList);
         }
 
         private void grillaArticulos_SelectionChanged(object sender, EventArgs e)
@@ -71,17 +67,7 @@ namespace TPWinForms
 
         private void agregarArticuloToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            /*frnAgregar ventanaAgregar = new frnAgregar();
-            ventanaAgregar.setGrilla(ref myList,ref grillaArticulos);
-            ventanaAgregar.ShowDialog();*/
-            NegocioArticulo servicio = new NegocioArticulo();
-            Articulo aux = new Articulo();
-            servicio.AgregarArticulo(ref aux, ref myList);
-            frnAgregar ventanaAgregar = new frnAgregar();
-            Articulo item = myList.Last();
-            ventanaAgregar.setGrilla(ref myList, ref grillaArticulos, ref item);
-           
-           
+            frnAgregar ventanaAgregar = new frnAgregar(this);         
             ventanaAgregar.ShowDialog();
         }
 
@@ -93,10 +79,11 @@ namespace TPWinForms
             {
                 palabra = ventanaBusqueda.palabra;
                 NegocioArticulo servicio = new NegocioArticulo();
+                ListaAnterior = myList;
                 myList = servicio.ListarXNombre(palabra);
                 grillaArticulos.DataSource = myList;
                 gbxDetalles.Visible = false;
-                checkBox1.Visible = true;
+                cbFiltro.Visible = true;
 
             }
 
@@ -110,10 +97,11 @@ namespace TPWinForms
             {
                 ID = ventanaBusqueda.ID;
                 NegocioArticulo servicio = new NegocioArticulo();
+                ListaAnterior = myList;
                 myList = servicio.ListarXMarca(ID);
                 grillaArticulos.DataSource = myList;
                 gbxDetalles.Visible = false;
-                checkBox1.Visible = true;
+                cbFiltro.Visible = true;
 
             }
         }
@@ -173,11 +161,9 @@ namespace TPWinForms
 
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
-            checkBox1.Checked = true;
-            checkBox1.Visible = false;
-            NegocioArticulo servicio = new NegocioArticulo();
-            myList = servicio.Listar();
-            grillaArticulos.DataSource = myList;
+            cbFiltro.Checked = true;
+            cbFiltro.Visible = false;
+            grillaArticulos.DataSource = ListaAnterior;
             gbxDetalles.Visible = false;
             
         }

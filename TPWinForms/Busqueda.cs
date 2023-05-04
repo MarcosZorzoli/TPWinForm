@@ -40,10 +40,6 @@ namespace TPWinForms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            /*   switch (this.op)
-             {
-                 case 1:
-                     {
                          if (string.IsNullOrEmpty(textBox1.Text))
                          {
                              MessageBox.Show("Primero ingrese información");
@@ -54,9 +50,8 @@ namespace TPWinForms
                              this.DialogResult = DialogResult.OK;
                              this.Close();
                          }
-                     }break;
 
-             } */
+             
 
         }
 

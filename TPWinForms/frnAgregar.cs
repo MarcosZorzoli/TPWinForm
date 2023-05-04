@@ -14,19 +14,15 @@ namespace TPWinForms
 {
     public partial class frnAgregar : Form 
     {
-        private System.Windows.Forms.DataGridView grilla;
-        private List<Articulo> articulos;
-        private Articulo creado;
-        public frnAgregar()
+        private Articulo creado = new Articulo();
+        
+        private Form1 _form1;
+        public frnAgregar(Form1 form1)
         {
             InitializeComponent();
+            _form1 = form1;
         }
-        public void setGrilla(ref List<Articulo> obj, ref System.Windows.Forms.DataGridView g,ref Articulo last)
-        {
-            this.articulos = obj;
-            this.grilla = g;
-            this.creado = last;
-        }
+
         private void frnAgregar_Load(object sender, EventArgs e)
         {
             cbMarca.Items.Add("Samsung");
@@ -41,58 +37,37 @@ namespace TPWinForms
             this.tbCodigo.Text = " ";
             this.tbDescripcion.Text = " ";
            
-                this.cbMarca.Text = cbMarca.Items[1].ToString();
+            this.cbMarca.Text = cbMarca.Items[1].ToString();
             
-            
-
             this.tbPrecio.Text = "0";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            grilla.Refresh();
         }
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Seguro que quiere Agregar este Articulo?", "Confirmar", MessageBoxButtons.OKCancel);
 
-            if (dialogResult == DialogResult.OK)
-            {
 
-               
-                creado.Id = (int)this.numID.Value;
-                creado.Codigo = this.tbCodigo.Text;
-                creado.Nombre = this.tbNombre.Text;
-                creado.Descripcion = this.tbDescripcion.Text;
-                creado.IdMarca = this.cbMarca.SelectedIndex;
-                creado.Precio = Convert.ToDecimal(this.tbPrecio.Text);
-                
-                
-               
+                        if (dialogResult == DialogResult.OK)
+                        {
+                             creado.Id = (int)this.numID.Value;
+                             creado.Codigo = this.tbCodigo.Text;
+                             creado.Nombre = this.tbNombre.Text;
+                             creado.Descripcion = this.tbDescripcion.Text;
+                             creado.IdMarca = this.cbMarca.SelectedIndex;
+                             creado.Precio = Convert.ToDecimal(this.tbPrecio.Text);
 
-               
-
-               
-
-                
-
-                grilla.Refresh();
-                this.Close();
-            }else
-            {
-                NegocioArticulo servicio = new NegocioArticulo();
-
-                
-                servicio.EiminarArticulo(ref creado, ref articulos);
-                grilla.DataSource = articulos;
-                this.Close();
-
-            }
-
-
+                            _form1.AddArticuloToGrid(creado);      
+                            this.Close();
+                        }
         }
+
+
+
 
         private void tbPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {

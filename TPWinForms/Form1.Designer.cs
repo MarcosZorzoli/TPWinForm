@@ -45,7 +45,7 @@
             this.porMarcaToolStripMenuItem2B = new System.Windows.Forms.ToolStripMenuItem();
             this.porCódigoToolStripMenuItem2C = new System.Windows.Forms.ToolStripMenuItem();
             this.porCategoríaToolStripMenuItem2D = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbFiltro = new System.Windows.Forms.CheckBox();
             this.reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).BeginInit();
             this.gbxDetalles.SuspendLayout();
@@ -203,19 +203,19 @@
             this.porCategoríaToolStripMenuItem2D.Text = "Por categoría";
             this.porCategoríaToolStripMenuItem2D.Click += new System.EventHandler(this.porCategoríaToolStripMenuItem2D_Click);
             // 
-            // checkBox1
+            // cbFiltro
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(654, 27);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(91, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Filtro aplicado";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.Visible = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
+            this.cbFiltro.AutoSize = true;
+            this.cbFiltro.Checked = true;
+            this.cbFiltro.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbFiltro.Location = new System.Drawing.Point(654, 27);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Size = new System.Drawing.Size(91, 17);
+            this.cbFiltro.TabIndex = 5;
+            this.cbFiltro.Text = "Filtro aplicado";
+            this.cbFiltro.UseVisualStyleBackColor = true;
+            this.cbFiltro.Visible = false;
+            this.cbFiltro.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
             // reset
             // 
@@ -234,7 +234,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1230, 601);
             this.Controls.Add(this.reset);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbFiltro);
             this.Controls.Add(this.gbxDetalles);
             this.Controls.Add(this.grillaArticulos);
             this.Controls.Add(this.menuStrip1);
@@ -272,7 +272,7 @@
         private System.Windows.Forms.ToolStripMenuItem porCódigoToolStripMenuItem2C;
         private System.Windows.Forms.ToolStripMenuItem porCategoríaToolStripMenuItem2D;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbFiltro;
         public System.Windows.Forms.DataGridView grillaArticulos;
         private System.Windows.Forms.Button reset;
     }
