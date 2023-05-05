@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 //using System.Windows.Forms.VisualStyles;
 using dominio;
+using System.Diagnostics.Eventing.Reader;
+
 namespace negocio
 {
     public class NegocioArticulo
@@ -103,7 +105,7 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
-        } 
+        }
 
         public List<Articulo> ListarXMarca(int id)
         {
@@ -165,14 +167,14 @@ namespace negocio
 
         }
 
-      
+
         public void AgregarArticulo(Articulo agregar)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)" +
-                    " values ('" + agregar.Codigo + "','"+agregar.Nombre+"','"+ agregar.Descripcion + "',@IdMarca,@IdCategoria,'" + agregar.Precio +"')");
+                    " values ('" + agregar.Codigo + "','" + agregar.Nombre + "','" + agregar.Descripcion + "',@IdMarca,@IdCategoria,'" + agregar.Precio + "')");
                 datos.setearParametro("@IdMarca", agregar.Marca.Id);
                 datos.setearParametro("@IdCategoria", agregar.Categoria.Id);
                 datos.ejecutarAccion();
@@ -189,9 +191,9 @@ namespace negocio
         }
 
 
-    
-    public void ModificarArticulo(Articulo modificado)
-    {
+
+        public void ModificarArticulo(Articulo modificado)
+        {
             AccesoDatos datos = new AccesoDatos();
 
 
@@ -216,7 +218,7 @@ namespace negocio
             {
                 datos.cerrarConexion();
             }
-      }
+        }
         public void Eliminar(int id)
         {
             try
@@ -225,7 +227,7 @@ namespace negocio
                 datos.setearConsulta("delete from Articulos where Id=@id");
                 datos.setearParametro("@id", id);
                 datos.ejecutarAccion();
-                
+
             }
             catch (Exception)
             {
@@ -275,6 +277,106 @@ namespace negocio
 
         }
 
+        public List<Articulo> Filtrar(string campo, string criterio, string filtro)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            NegocioImagen misImagens = new NegocioImagen();
 
+            try
+            {
+                string consulta = "Select a.Id, Codigo, Nombre,a.Descripcion,a.IdMarca,idcategoria,c.DESCRIPCION as Categoria,m.DESCRIPCION as Marca,Precio from ARTICULOS a , categorias c, marcas m where a.idcategoria=c.ID and a.idMarca=m.id and ";
+
+                if (campo == "Número")
+                {
+                    switch (campo)
+                    {
+                        case "Mayor a":
+                            consulta += "Numero > " + filtro;
+                            break;
+
+                        case "Menor a":
+                            consulta += "Numero > " + filtro;
+                            break;
+
+                        case "Igual a":
+                            consulta += "Numero < " + filtro;
+                            break;
+
+                    }
+                }
+
+                else if (campo == "Nombre")
+                {
+                    switch (campo)
+                    {
+                        case "Comienza con":
+                            consulta += "Nombre like '" + filtro + "%' ";
+                            break;
+
+                        case "Termina con":
+                            consulta += "Nombre like %'" + filtro + "' ";
+                            break;
+
+                        case "Contiene":
+                            consulta += "Nombre like %'" + filtro + "%' ";
+                            break;
+
+                    }
+                }
+                else if (campo == "Descripción")
+                {
+                    switch (campo)
+                    {
+                        case "Comienza con":
+                            consulta += "Descripcion like '" + filtro + "%' ";
+                            break;
+
+                        case "Termina con":
+                            consulta += "Descripcion like %'" + filtro + "' ";
+                            break;
+
+                        case "Contiene":
+                            consulta += "Descripcion like %'" + filtro + "%' ";
+                            break;
+
+                    }
+                }
+
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+
+
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Id = datos.Lector.GetInt32(0);
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Id = datos.Lector.GetInt32(5);
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    aux.Marca = new Marca();
+                    aux.Marca.Id = datos.Lector.GetInt32(4);
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Imagenes = misImagens.Listar(datos.Lector.GetInt32(0));
+                    lista.Add(aux);
+
+                }
+                return lista;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
     }
 }

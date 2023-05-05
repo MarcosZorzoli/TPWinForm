@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using negocio;
 using dominio;
+using System.Diagnostics.Eventing.Reader;
+
 namespace TPWinForms
 {
     public partial class Form1 : Form
@@ -25,9 +27,14 @@ namespace TPWinForms
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cbxCampo.Items.Add("Nombre");
+            cbxCampo.Items.Add("Número");
+            cbxCampo.Items.Add("Descripción");
             NegocioArticulo servicio = new NegocioArticulo();
             myList = servicio.Listar();
            
+
+
             grillaArticulos.DataSource = myList;
             gbxDetalles.Visible = false;
             
@@ -131,7 +138,7 @@ namespace TPWinForms
         {
             List<Articulo> listaFiltro;
             string filtro = txtFiltro.Text;
-            if(filtro!=""&&filtro.Length>=3)
+            if(filtro!=""&&filtro.Length>=2)
             {
                 listaFiltro=myList.FindAll(x=>x.Nombre.ToUpper().Contains(filtro.ToUpper())||x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
             }
@@ -209,6 +216,44 @@ namespace TPWinForms
         {
             frnAgregar ventanaAgregar = new frnAgregar();
             ventanaAgregar.ShowDialog();
+        }
+
+        private void btnBuscarFiltro_Click(object sender, EventArgs e)
+        {
+            NegocioArticulo negocio = new NegocioArticulo();
+
+            try
+            {
+                string campo = cbxCampo.SelectedItem.ToString();
+                string criterio = cbxCriterio.SelectedItem.ToString();
+                string filtro = txtFiltrarA.Text;
+                grillaArticulos.DataSource = negocio.Filtrar(campo, criterio, filtro);  
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+           
+        }
+
+        private void cbxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cbxCampo.SelectedItem.ToString();
+            if(opcion=="Número")
+            {
+                cbxCriterio.Items.Clear();
+                cbxCriterio.Items.Add("Igual a");
+                cbxCriterio.Items.Add("Mayor a");
+                cbxCriterio.Items.Add("Menor a");
+            }
+            else
+            {
+                cbxCriterio.Items.Clear();
+                cbxCriterio.Items.Add("Contiene");
+                cbxCriterio.Items.Add("Comienza con");
+                cbxCriterio.Items.Add("Termina con");
+            }
+
         }
     }
 }

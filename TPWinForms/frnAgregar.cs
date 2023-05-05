@@ -14,7 +14,7 @@ using negocio;
 
 namespace TPWinForms
 {
-    public partial class frnAgregar : Form 
+    public partial class frnAgregar : Form
     {
         private Articulo creado = new Articulo();
         private Form1 form = new Form1();
@@ -26,8 +26,8 @@ namespace TPWinForms
         private void frnAgregar_Load(object sender, EventArgs e)
         {
 
-        NegocioCategoria nCat = new NegocioCategoria();
-        NegocioMarca cMa = new NegocioMarca();
+            NegocioCategoria nCat = new NegocioCategoria();
+            NegocioMarca cMa = new NegocioMarca();
 
             try
             {
@@ -46,9 +46,9 @@ namespace TPWinForms
 
             this.tbCodigo.Text = " ";
             this.tbDescripcion.Text = " ";
-           
+
             this.cbMarca.Text = cbMarca.Items[1].ToString();
-            
+
             this.tbPrecio.Text = "0";
         }
 
@@ -80,12 +80,8 @@ namespace TPWinForms
 
                 MessageBox.Show(ex.ToString());
             }
-                            
-             
-                        
+
         }
-
-
 
 
         private void tbPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -98,8 +94,8 @@ namespace TPWinForms
         }
 
         private void cbMarca_KeyPress(object sender, KeyPressEventArgs e)
-        {           
-                e.Handled = true;        
+        {
+            e.Handled = true;
         }
 
         private void cargarImagen(string img)
@@ -120,16 +116,18 @@ namespace TPWinForms
             OpenFileDialog archivo = new OpenFileDialog();
             archivo.Filter = "jpg| *.jpg";
             archivo.ShowDialog();
-            if(archivo.ShowDialog() == DialogResult.OK) 
+            if (archivo.ShowDialog() == DialogResult.OK)
             {
                 tbAddImage.Text = archivo.FileName;
-               
+
             }
         }
 
         private void tbAddImage_Leave(object sender, EventArgs e)
         {
-           cargarImagen(tbAddImage.Text);
+            cargarImagen(tbAddImage.Text);
         }
+
+
     }
 }
