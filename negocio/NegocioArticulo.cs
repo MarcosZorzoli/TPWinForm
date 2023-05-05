@@ -127,7 +127,7 @@ namespace negocio
 
             try
             {
-                conexion.ConnectionString = "server=Tobi\\SQLEXPRESST; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=DESKTOP-E8MHNDC\\SQLLAB3; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo and A.Nombre=nombre";
                 comando.Connection = conexion;
@@ -247,7 +247,47 @@ namespace negocio
             }
 
         }
+        public void EliminarImg(int img)
+        {
+            AccesoDatos datos = new AccesoDatos();
 
 
-}
+            try
+            {
+
+                datos.setearConsulta("delete from imagenes where id=@numero");
+                datos.setearParametro("@numero", img);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        public void agregarImagenUrl(int id, string url)
+        {
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+
+                datos.setearConsulta("insert into Imagenes (IDARTICULO,IMAGENURL) values (@idArticulo,@url)");
+                datos.setearParametro("@idarticulo", id);
+                datos.setearParametro("@url", url);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+
+    }
 }
