@@ -17,7 +17,7 @@ namespace negocio
 
             try
             {
-                datos.setearConsulta("Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo");
+                datos.setearConsulta("Select Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio  from ARTICULOS ");
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -29,7 +29,7 @@ namespace negocio
                     aux.IdMarca = datos.Lector.GetInt32(4);
                     aux.IdCategoria = datos.Lector.GetInt32(5);
                     aux.Precio = datos.Lector.GetDecimal(6);
-                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+                    //aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
                     if (lista.Count == 0)
                     {
                         lista.Add(aux);
@@ -75,7 +75,7 @@ namespace negocio
 
             try
             {
-                conexion.ConnectionString = "server=Tobi\\SQLEXPRESST; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=DESKTOP-E8MHNDC\\SQLLAB3; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo and A.Nombre=nombre";
                 comando.Connection = conexion;
@@ -184,22 +184,7 @@ namespace negocio
 
         }
 
-        public void EiminarArticulo(ref Articulo target, ref List<Articulo> listaActual)
-        {
-            List<Articulo> aux = new List<Articulo>();
-            int contador = 0;
-            for (int i = 0; i < listaActual.Count; i++)
-            {
-                if (listaActual[i] != target)
-                {
-                    contador++;
-                    aux.Add(listaActual[i]);
-
-                }
-            }
-            listaActual = aux;
-
-        }
+      
         public void AgregarArticulo(Articulo agregar)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -223,5 +208,52 @@ namespace negocio
         }
 
 
-    }
+    
+    public void ModificarArticulo(Articulo modificado)
+    {
+            AccesoDatos datos = new AccesoDatos();
+
+
+            try
+            {
+                datos.setearConsulta("update Articulos set Codigo=@codigo, Nombre=@nombre, Descripcion=@descripcion, IdMarca=@idmarca, IdCategoria=@idcategoria, Precio=@precio  where Id=@id");
+                datos.setearParametro("@id", modificado.Id);
+                datos.setearParametro("@codigo", modificado.Codigo);
+                datos.setearParametro("@nombre", modificado.Nombre);
+                datos.setearParametro("@descripcion", modificado.Descripcion);
+                datos.setearParametro("@idmarca", modificado.IdMarca);
+                datos.setearParametro("@idcategoria", modificado.IdCategoria);
+                datos.setearParametro("@precio", modificado.Precio);
+                datos.EjecutarAccion();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+      }
+        public void Eliminar(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("delete from Articulos where Id=@id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarAccion();
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+
+}
 }

@@ -9,33 +9,36 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
+using negocio;
+
 namespace TPWinForms
 {
-  
-public partial class Alterar : Form
+
+    public partial class Alterar : Form
     {
         private Articulo obj;
-        private System.Windows.Forms.DataGridView grilla;
+
         public Alterar()
         {
             InitializeComponent();
         }
-        public void setArticulo(ref Articulo obj, ref System.Windows.Forms.DataGridView g ) { 
+        public Alterar(Articulo obj)
+        {
+            InitializeComponent();
             this.obj = obj;
-            this.grilla = g;             
-        }
 
-        private void Alterar_Load(object sender, EventArgs e)
+        }
+        public void Cargar()
         {
             cbMarcaAlterar.Items.Add("Samsung");
             cbMarcaAlterar.Items.Add("Apple");
             cbMarcaAlterar.Items.Add("Sony");
             cbMarcaAlterar.Items.Add("Huawey");
             cbMarcaAlterar.Items.Add("Motorola");
-          
+
             this.tbNombre.Text = obj.Nombre;
+
             
-            this.numID.Value = obj.Id;
             this.tbCodigo.Text = obj.Codigo;
             this.tbDescripcion.Text = obj.Descripcion;
             try
@@ -47,10 +50,15 @@ public partial class Alterar : Form
                 this.cbMarcaAlterar.Text = cbMarcaAlterar.Items[1].ToString();
                 throw;
             }
-           
+
             this.tbPrecio.Text = obj.Precio.ToString();
+        }
+
+        private void Alterar_Load(object sender, EventArgs e)
+        {
 
 
+            Cargar();
 
         }
 
@@ -72,38 +80,31 @@ public partial class Alterar : Form
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Seguro que quiere Modificar este Articulo?", "Confirmar", MessageBoxButtons.OKCancel);
-
+            NegocioArticulo negocio = new NegocioArticulo();
             if (dialogResult == DialogResult.OK)
             {
-                obj.Nombre = this.tbNombre.Text;
-
-                obj.Id = (int)this.numID.Value;
-
-
-                obj.Codigo = this.tbCodigo.Text;
-
-
-                obj.Descripcion = this.tbDescripcion.Text;
-
-
-                obj.IdMarca = cbMarcaAlterar.SelectedIndex;
-
-                obj.Precio = Convert.ToDecimal(this.tbPrecio.Text);
-                grilla.Refresh();
-                this.Close();
                 
+                obj.Codigo = this.tbCodigo.Text;
+                obj.Descripcion = this.tbDescripcion.Text;
+                obj.Nombre = this.tbNombre.Text;
+                obj.Precio = Convert.ToDecimal(this.tbPrecio.Text);
+                obj.IdMarca = this.cbMarcaAlterar.SelectedIndex;
+                negocio.ModificarArticulo(obj);
+
+                Close();
+
 
             }
-          
-           
+
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            grilla.Refresh();
+
         }
 
-       
+
     }
 }

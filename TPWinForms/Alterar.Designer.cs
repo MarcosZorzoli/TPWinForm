@@ -34,7 +34,6 @@
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.tbCodigo = new System.Windows.Forms.TextBox();
-            this.numID = new System.Windows.Forms.NumericUpDown();
             this.cbMarcaAlterar = new System.Windows.Forms.ComboBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
@@ -42,11 +41,9 @@
             this.lblDesc = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numCategoria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numID)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -94,13 +91,6 @@
             this.tbCodigo.Name = "tbCodigo";
             this.tbCodigo.Size = new System.Drawing.Size(63, 20);
             this.tbCodigo.TabIndex = 28;
-            // 
-            // numID
-            // 
-            this.numID.Location = new System.Drawing.Point(360, 121);
-            this.numID.Name = "numID";
-            this.numID.Size = new System.Drawing.Size(63, 20);
-            this.numID.TabIndex = 27;
             // 
             // cbMarcaAlterar
             // 
@@ -164,15 +154,6 @@
             this.lblCodigo.TabIndex = 20;
             this.lblCodigo.Text = "Codigo :";
             // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(265, 123);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(24, 13);
-            this.lblId.TabIndex = 19;
-            this.lblId.Text = "ID :";
-            // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(476, 377);
@@ -205,7 +186,6 @@
             this.Controls.Add(this.tbDescripcion);
             this.Controls.Add(this.tbNombre);
             this.Controls.Add(this.tbCodigo);
-            this.Controls.Add(this.numID);
             this.Controls.Add(this.cbMarcaAlterar);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblCategoria);
@@ -213,15 +193,12 @@
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblNombre);
             this.Name = "Alterar";
             this.Text = "Alterar";
             this.Activated += new System.EventHandler(this.Alterar_Activated);
             this.Load += new System.EventHandler(this.Alterar_Load);
-         
             ((System.ComponentModel.ISupportInitialize)(this.numCategoria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,7 +212,6 @@
         private System.Windows.Forms.TextBox tbDescripcion;
         private System.Windows.Forms.TextBox tbNombre;
         private System.Windows.Forms.TextBox tbCodigo;
-        private System.Windows.Forms.NumericUpDown numID;
         private System.Windows.Forms.ComboBox cbMarcaAlterar;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label lblCategoria;
@@ -243,7 +219,6 @@
         private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }

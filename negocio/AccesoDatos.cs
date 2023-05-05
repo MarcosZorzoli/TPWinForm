@@ -19,7 +19,7 @@ namespace negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=Tobi\\SQLEXPRESST; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=DESKTOP-E8MHNDC\\SQLLAB3; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
 
         }
@@ -72,6 +72,20 @@ namespace negocio
             if (lector != null)
                 lector.Close();
             conexion.Close();
+        }
+        public void EjecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
