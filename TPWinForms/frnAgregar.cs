@@ -26,16 +26,21 @@ namespace TPWinForms
         private void frnAgregar_Load(object sender, EventArgs e)
         {
 
-            cbMarca.Items.Add("Samsung");
-            cbMarca.Items.Add("Apple");
-            cbMarca.Items.Add("Sony");
-            cbMarca.Items.Add("Huawey");
-            cbMarca.Items.Add("Motorola");
+        NegocioCategoria nCat = new NegocioCategoria();
+        NegocioMarca cMa = new NegocioMarca();
 
-            cbCategoria.Items.Add("Celulares");
-            cbCategoria.Items.Add("Televisores");
-            cbCategoria.Items.Add("Media");
-            cbCategoria.Items.Add("Audio");
+            try
+            {
+                cbMarca.DataSource = cMa.Listar();
+                cbCategoria.DataSource = nCat.Listar();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
 
             this.tbNombre.Text = " ";
 
@@ -61,9 +66,9 @@ namespace TPWinForms
                 creado.Codigo = this.tbCodigo.Text;
                 creado.Nombre = this.tbNombre.Text;
                 creado.Descripcion = this.tbDescripcion.Text;
-                //creado.IdMarca = this.cbMarca.SelectedIndex;
+                creado.Marca = (Marca)cbMarca.SelectedItem;
                 creado.Precio = Convert.ToDecimal(this.tbPrecio.Text);
-                //creado.IdCategoria = this.cbCategoria.SelectedIndex;
+                creado.Categoria = (Categoria)cbCategoria.SelectedItem;
 
                 negocio.AgregarArticulo(creado);
                 MessageBox.Show("Agregado exitosamente");
@@ -97,6 +102,34 @@ namespace TPWinForms
                 e.Handled = true;        
         }
 
-       
+        private void cargarImagen(string img)
+        {
+            try
+            {
+                pbxAddImagen.Load(img);
+            }
+            catch (Exception ex)
+            {
+                pbxAddImagen.Load("https://www.tibs.org.tw/images/default.jpg");
+            }
+        }
+
+
+        private void btnAgregarImagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog archivo = new OpenFileDialog();
+            archivo.Filter = "jpg| *.jpg";
+            archivo.ShowDialog();
+            if(archivo.ShowDialog() == DialogResult.OK) 
+            {
+                tbAddImage.Text = archivo.FileName;
+               
+            }
+        }
+
+        private void tbAddImage_Leave(object sender, EventArgs e)
+        {
+           cargarImagen(tbAddImage.Text);
+        }
     }
 }

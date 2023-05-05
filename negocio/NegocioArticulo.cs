@@ -69,7 +69,7 @@ namespace negocio
 
             try
             {
-                conexion.ConnectionString = "server=DESKTOP-6024H1Q; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=Tobi\\SQLEXPRESST; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo and A.Nombre=nombre";
                 comando.Connection = conexion;
@@ -127,7 +127,7 @@ namespace negocio
 
             try
             {
-                conexion.ConnectionString = "server=DESKTOP-6024H1Q; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=Tobi\\SQLEXPRESST; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo and A.Nombre=nombre";
                 comando.Connection = conexion;
@@ -184,10 +184,10 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                /*datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)" +
+                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)" +
                     " values ('" + agregar.Codigo + "','"+agregar.Nombre+"','"+ agregar.Descripcion + "',@IdMarca,@IdCategoria,'" + agregar.Precio +"')");
-                datos.setearParametro("@IdMarca", agregar.IdMarca + 1);
-                //datos.setearParametro("@IdCategoria", agregar.IdCategoria + 1);*/
+                datos.setearParametro("@IdMarca", agregar.Marca.Id);
+                datos.setearParametro("@IdCategoria", agregar.Categoria.Id);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

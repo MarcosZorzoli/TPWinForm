@@ -31,21 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.grillaArticulos = new System.Windows.Forms.DataGridView();
             this.gbxDetalles = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.lblImagen = new System.Windows.Forms.Label();
+            this.flechitaIzq = new System.Windows.Forms.Button();
+            this.flechitaD = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAlter = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.cbFiltro = new System.Windows.Forms.CheckBox();
             this.reset = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblFiltro = new System.Windows.Forms.Label();
-            this.flechitaIzq = new System.Windows.Forms.Button();
-            this.flechitaD = new System.Windows.Forms.Button();
-            this.pbxImagen = new System.Windows.Forms.PictureBox();
-            this.lblImagen = new System.Windows.Forms.Label();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).BeginInit();
             this.gbxDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
@@ -84,6 +85,53 @@
             this.gbxDetalles.TabStop = false;
             this.gbxDetalles.Text = "Detalles";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(222, 387);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(12, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "/";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(234, 386);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(89, 13);
+            this.lblCantidad.TabIndex = 9;
+            this.lblCantidad.Text = "cantidad de fotos";
+            // 
+            // lblImagen
+            // 
+            this.lblImagen.AutoSize = true;
+            this.lblImagen.Location = new System.Drawing.Point(207, 386);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(57, 13);
+            this.lblImagen.TabIndex = 8;
+            this.lblImagen.Text = "foto actual";
+            // 
+            // flechitaIzq
+            // 
+            this.flechitaIzq.Image = global::TPWinForms.Properties.Resources.flechitaIzq;
+            this.flechitaIzq.Location = new System.Drawing.Point(8, 202);
+            this.flechitaIzq.Name = "flechitaIzq";
+            this.flechitaIzq.Size = new System.Drawing.Size(57, 105);
+            this.flechitaIzq.TabIndex = 7;
+            this.flechitaIzq.UseVisualStyleBackColor = true;
+            this.flechitaIzq.Click += new System.EventHandler(this.flechitaIzq_Click);
+            // 
+            // flechitaD
+            // 
+            this.flechitaD.Image = global::TPWinForms.Properties.Resources.flechita1;
+            this.flechitaD.Location = new System.Drawing.Point(377, 202);
+            this.flechitaD.Name = "flechitaD";
+            this.flechitaD.Size = new System.Drawing.Size(57, 105);
+            this.flechitaD.TabIndex = 6;
+            this.flechitaD.UseVisualStyleBackColor = true;
+            this.flechitaD.Click += new System.EventHandler(this.flechitaD_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(186, 409);
@@ -113,6 +161,15 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // pbxImagen
+            // 
+            this.pbxImagen.Location = new System.Drawing.Point(71, 133);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(300, 244);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagen.TabIndex = 2;
+            this.pbxImagen.TabStop = false;
             // 
             // lblDescripcion
             // 
@@ -148,7 +205,7 @@
             // 
             // reset
             // 
-            this.reset.Location = new System.Drawing.Point(267, 519);
+            this.reset.Location = new System.Drawing.Point(250, 517);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(156, 23);
             this.reset.TabIndex = 6;
@@ -173,61 +230,15 @@
             this.lblFiltro.TabIndex = 8;
             this.lblFiltro.Text = "Filtro:";
             // 
-            // flechitaIzq
+            // btnAgregar
             // 
-            this.flechitaIzq.Image = global::TPWinForms.Properties.Resources.flechitaIzq;
-            this.flechitaIzq.Location = new System.Drawing.Point(8, 202);
-            this.flechitaIzq.Name = "flechitaIzq";
-            this.flechitaIzq.Size = new System.Drawing.Size(57, 105);
-            this.flechitaIzq.TabIndex = 7;
-            this.flechitaIzq.UseVisualStyleBackColor = true;
-            this.flechitaIzq.Click += new System.EventHandler(this.flechitaIzq_Click);
-            // 
-            // flechitaD
-            // 
-            this.flechitaD.Image = global::TPWinForms.Properties.Resources.flechita1;
-            this.flechitaD.Location = new System.Drawing.Point(377, 202);
-            this.flechitaD.Name = "flechitaD";
-            this.flechitaD.Size = new System.Drawing.Size(57, 105);
-            this.flechitaD.TabIndex = 6;
-            this.flechitaD.UseVisualStyleBackColor = true;
-            this.flechitaD.Click += new System.EventHandler(this.flechitaD_Click);
-            // 
-            // pbxImagen
-            // 
-            this.pbxImagen.Location = new System.Drawing.Point(71, 133);
-            this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(300, 244);
-            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxImagen.TabIndex = 2;
-            this.pbxImagen.TabStop = false;
-            // 
-            // lblImagen
-            // 
-            this.lblImagen.AutoSize = true;
-            this.lblImagen.Location = new System.Drawing.Point(207, 386);
-            this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(57, 13);
-            this.lblImagen.TabIndex = 8;
-            this.lblImagen.Text = "foto actual";
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(234, 386);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(89, 13);
-            this.lblCantidad.TabIndex = 9;
-            this.lblCantidad.Text = "cantidad de fotos";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(222, 387);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(12, 13);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "/";
+            this.btnAgregar.Location = new System.Drawing.Point(250, 559);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(156, 23);
+            this.btnAgregar.TabIndex = 9;
+            this.btnAgregar.Text = "Agregar Articulo";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // Form1
             // 
@@ -235,6 +246,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1230, 601);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.reset);
@@ -274,6 +286,7 @@
         private System.Windows.Forms.Label lblImagen;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.Button btnAgregar;
     }
 }
 

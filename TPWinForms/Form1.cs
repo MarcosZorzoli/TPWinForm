@@ -63,11 +63,7 @@ namespace TPWinForms
 
       
 
-        private void agregarArticuloToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frnAgregar ventanaAgregar = new frnAgregar();         
-            ventanaAgregar.ShowDialog();
-        }
+        
 
         private void porNombreToolStripMenuItem2A_Click(object sender, EventArgs e)
         {
@@ -269,6 +265,12 @@ namespace TPWinForms
            
             
             lblImagen.Text = (ubicacion+1).ToString();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frnAgregar ventanaAgregar = new frnAgregar();
+            ventanaAgregar.ShowDialog();
         }
     }
 }

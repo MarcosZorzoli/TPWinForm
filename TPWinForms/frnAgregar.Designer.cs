@@ -45,6 +45,11 @@
             this.tbPrecio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
+            this.tbAddImage = new System.Windows.Forms.TextBox();
+            this.lblAddImage = new System.Windows.Forms.Label();
+            this.pbxAddImagen = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAddImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -70,7 +75,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(78, 80);
+            this.lblCodigo.Location = new System.Drawing.Point(104, 80);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(46, 13);
             this.lblCodigo.TabIndex = 3;
@@ -79,7 +84,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(78, 111);
+            this.lblNombre.Location = new System.Drawing.Point(97, 111);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(50, 13);
             this.lblNombre.TabIndex = 4;
@@ -88,7 +93,7 @@
             // lblDesc
             // 
             this.lblDesc.AutoSize = true;
-            this.lblDesc.Location = new System.Drawing.Point(78, 139);
+            this.lblDesc.Location = new System.Drawing.Point(81, 139);
             this.lblDesc.Name = "lblDesc";
             this.lblDesc.Size = new System.Drawing.Size(69, 13);
             this.lblDesc.TabIndex = 5;
@@ -97,7 +102,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(78, 171);
+            this.lblMarca.Location = new System.Drawing.Point(104, 171);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(43, 13);
             this.lblMarca.TabIndex = 6;
@@ -115,7 +120,7 @@
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(78, 237);
+            this.lblPrecio.Location = new System.Drawing.Point(104, 237);
             this.lblPrecio.Name = "lblPrecio";
             this.lblPrecio.Size = new System.Drawing.Size(43, 13);
             this.lblPrecio.TabIndex = 8;
@@ -188,11 +193,53 @@
             this.cbCategoria.Size = new System.Drawing.Size(176, 21);
             this.cbCategoria.TabIndex = 33;
             // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarImagen.Location = new System.Drawing.Point(354, 272);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(28, 23);
+            this.btnAgregarImagen.TabIndex = 34;
+            this.btnAgregarImagen.Text = "+";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
+            // tbAddImage
+            // 
+            this.tbAddImage.Location = new System.Drawing.Point(173, 272);
+            this.tbAddImage.Name = "tbAddImage";
+            this.tbAddImage.Size = new System.Drawing.Size(176, 20);
+            this.tbAddImage.TabIndex = 35;
+            this.tbAddImage.Leave += new System.EventHandler(this.tbAddImage_Leave);
+            // 
+            // lblAddImage
+            // 
+            this.lblAddImage.AutoSize = true;
+            this.lblAddImage.Location = new System.Drawing.Point(99, 277);
+            this.lblAddImage.Name = "lblAddImage";
+            this.lblAddImage.Size = new System.Drawing.Size(48, 13);
+            this.lblAddImage.TabIndex = 36;
+            this.lblAddImage.Text = "Imagen :";
+            // 
+            // pbxAddImagen
+            // 
+            this.pbxAddImagen.Location = new System.Drawing.Point(462, 80);
+            this.pbxAddImagen.Name = "pbxAddImagen";
+            this.pbxAddImagen.Size = new System.Drawing.Size(252, 215);
+            this.pbxAddImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxAddImagen.TabIndex = 37;
+            this.pbxAddImagen.TabStop = false;
+            // 
             // frnAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 405);
+            this.ClientSize = new System.Drawing.Size(757, 405);
+            this.Controls.Add(this.pbxAddImagen);
+            this.Controls.Add(this.lblAddImage);
+            this.Controls.Add(this.tbAddImage);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbPrecio);
@@ -215,6 +262,7 @@
             this.Name = "frnAgregar";
             this.Text = "frnAgregar";
             this.Load += new System.EventHandler(this.frnAgregar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxAddImagen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,5 +286,9 @@
         private System.Windows.Forms.TextBox tbPrecio;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbCategoria;
+        private System.Windows.Forms.Button btnAgregarImagen;
+        private System.Windows.Forms.TextBox tbAddImage;
+        private System.Windows.Forms.Label lblAddImage;
+        private System.Windows.Forms.PictureBox pbxAddImagen;
     }
 }
