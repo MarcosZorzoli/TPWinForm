@@ -201,7 +201,6 @@
             this.cbFiltro.Text = "Filtro aplicado";
             this.cbFiltro.UseVisualStyleBackColor = true;
             this.cbFiltro.Visible = false;
-            this.cbFiltro.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
             // reset
             // 

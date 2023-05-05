@@ -19,7 +19,7 @@ namespace negocio
             try
             {
                 datos.setearConsulta("Select a.Id, Codigo, Nombre,a.Descripcion,a.IdMarca,idcategoria,c.DESCRIPCION as Categoria,m.DESCRIPCION as Marca,Precio from ARTICULOS a , categorias c, marcas m where a.idcategoria=c.ID and a.idMarca=m.id");
-              
+
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -28,8 +28,8 @@ namespace negocio
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-                  
-                    aux.Categoria  = new Categoria();
+
+                    aux.Categoria = new Categoria();
 
                     aux.Categoria.Id = datos.Lector.GetInt32(5);
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
@@ -39,7 +39,7 @@ namespace negocio
                     aux.Precio = (decimal)datos.Lector["Precio"];
                     aux.Imagenes = misImagens.Listar(datos.Lector.GetInt32(0));
                     lista.Add(aux);
-                    
+
 
 
                 }
@@ -63,60 +63,47 @@ namespace negocio
         public List<Articulo> ListarXNombre(string nombre)
         {
             List<Articulo> lista = new List<Articulo>();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
+            AccesoDatos datos = new AccesoDatos();
+            NegocioImagen misImagens = new NegocioImagen();
 
             try
             {
-                conexion.ConnectionString = "server=Tobi\\SQLEXPRESST; database=CATALOGO_P3_DB; integrated security=true";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo and A.Nombre=nombre";
-                comando.Connection = conexion;
-                conexion.Open();
-                lector = comando.ExecuteReader();
-                while (lector.Read())
+                datos.setearConsulta("Select a.Id, Codigo, Nombre,a.Descripcion,a.IdMarca,idcategoria,c.DESCRIPCION as Categoria,m.DESCRIPCION as Marca,Precio from ARTICULOS a , categorias c, marcas m where a.idcategoria=c.ID and a.idMarca=m.id");
+
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    string nnombre = (string)lector["Nombre"];
+                    string nnombre = (string)datos.Lector["Nombre"];
                     if (nnombre.IndexOf(nombre, StringComparison.OrdinalIgnoreCase) > -1)
                     {
-                        aux.Id = lector.GetInt32(0);
-                        aux.Codigo = (string)lector["Codigo"];
-                        aux.Nombre = (string)lector["Nombre"];
-                        aux.Descripcion = (string)lector["Descripcion"];
-                       // aux.IdMarca = lector.GetInt32(4);
-                        //aux.IdCategoria = lector.GetInt32(5);
-                        aux.Precio = lector.GetDecimal(6);
-                        //aux.UrlImagen = (string)lector["ImagenUrl"];
-                        if (lista.Count == 0)
-                        {
-                            lista.Add(aux);
-                        }
-                        else
-
-                    if (lista.Last().Id == aux.Id)
-                        {
-
-                            lista.Remove(aux);
-                        }
-                        else
-                        {
-                            lista.Add(aux);
-                        }
+                        aux.Id = datos.Lector.GetInt32(0);
+                        aux.Codigo = (string)datos.Lector["Codigo"];
+                        aux.Nombre = (string)datos.Lector["Nombre"];
+                        aux.Descripcion = (string)datos.Lector["Descripcion"];
+                        aux.Categoria = new Categoria();
+                        aux.Categoria.Id = datos.Lector.GetInt32(5);
+                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                        aux.Marca = new Marca();
+                        aux.Marca.Id = datos.Lector.GetInt32(4);
+                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                        aux.Precio = (decimal)datos.Lector["Precio"];
+                        aux.Imagenes = misImagens.Listar(datos.Lector.GetInt32(0));
+                        lista.Add(aux);
                     }
-
                 }
-                conexion.Close();
+
                 return lista;
             }
             catch (Exception)
             {
-
                 throw;
             }
-
-        }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        } 
 
         public List<Articulo> ListarXMarca(int id)
         {
@@ -127,7 +114,7 @@ namespace negocio
 
             try
             {
-                conexion.ConnectionString = "server=DESKTOP-E8MHNDC\\SQLLAB3; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=DESKTOP-6024H1Q; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo and A.Nombre=nombre";
                 comando.Connection = conexion;

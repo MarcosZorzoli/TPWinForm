@@ -27,7 +27,6 @@ C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\TPWinForms\bin\Debug\negocio.pdb
 C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\TPWinForms\obj\Debug\TPWinForms.csproj.AssemblyReference.cache
 C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\TPWinForms\obj\Debug\TPWinForms.csproj.SuggestedBindingRedirects.cache
 C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\TPWinForms\obj\Debug\TPWinForms.Alterar.resources
-C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\TPWinForms\obj\Debug\TPWinForms.Busqueda.resources
 C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\TPWinForms\obj\Debug\TPWinForms.Form1.resources
 C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\TPWinForms\obj\Debug\TPWinForms.frnAgregar.resources
 C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\TPWinForms\obj\Debug\TPWinForms.Properties.Resources.resources
@@ -94,3 +93,4 @@ C:\Users\manue\Desktop\New folder\TPWinForm-main\TPWinForms\bin\Debug\negocio.dl
 C:\Users\manue\Desktop\New folder\TPWinForm-main\TPWinForms\bin\Debug\dominio.pdb
 C:\Users\manue\Desktop\New folder\TPWinForm-main\TPWinForms\bin\Debug\negocio.pdb
 C:\Users\manue\Desktop\New folder\TPWinForm-main\TPWinForms\obj\Debug\TPWinForms.csproj.CopyComplete
+C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\TPWinForms\obj\Debug\TPWinForms.frmAgregarImagen.resources

@@ -61,59 +61,6 @@ namespace TPWinForms
             gbxDetalles.Visible = false;
         }
 
-      
-
-        
-
-        private void porNombreToolStripMenuItem2A_Click(object sender, EventArgs e)
-        {
-            if (cbFiltro.Visible == true)
-            { }
-            string palabra;
-            Busqueda ventanaBusqueda = new Busqueda(1);
-            if (ventanaBusqueda.ShowDialog() == DialogResult.OK)
-            {
-                palabra = ventanaBusqueda.palabra;
-                NegocioArticulo servicio = new NegocioArticulo();
-                ListaAnterior = myList;
-                myList = servicio.ListarXNombre(palabra);
-                grillaArticulos.DataSource = myList;
-                gbxDetalles.Visible = false;
-                cbFiltro.Visible = true;
-
-            }
-
-        }
-
-        private void porMarcaToolStripMenuItem2B_Click(object sender, EventArgs e)
-        {
-            int ID;
-            Busqueda ventanaBusqueda = new Busqueda(2);
-            if (ventanaBusqueda.ShowDialog() == DialogResult.OK)
-            {
-                ID = ventanaBusqueda.ID;
-                NegocioArticulo servicio = new NegocioArticulo();
-                ListaAnterior = myList;
-                myList = servicio.ListarXMarca(ID);
-                grillaArticulos.DataSource = myList;
-                gbxDetalles.Visible = false;
-                cbFiltro.Visible = true;
-
-            }
-        }
-
-        private void porCódigoToolStripMenuItem2C_Click(object sender, EventArgs e)
-        {
-            Busqueda ventanaBusqueda = new Busqueda(3);
-            ventanaBusqueda.ShowDialog();
-        }
-
-        private void porCategoríaToolStripMenuItem2D_Click(object sender, EventArgs e)
-        {
-            Busqueda ventanaBusqueda = new Busqueda(4);
-            ventanaBusqueda.ShowDialog();
-        }
-
         private void btnAlter_Click(object sender, EventArgs e)
         {
             Articulo item = (Articulo)grillaArticulos.CurrentRow.DataBoundItem;
@@ -155,15 +102,6 @@ namespace TPWinForms
                 servicio.Eliminar(item.Id);
                 Cargar();
             }
-        }
-
-        private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            cbFiltro.Checked = true;
-            cbFiltro.Visible = false;
-            grillaArticulos.DataSource = ListaAnterior;
-            gbxDetalles.Visible = false;
-            
         }
 
         private void reset_Click(object sender, EventArgs e)

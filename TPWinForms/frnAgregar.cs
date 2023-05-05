@@ -108,7 +108,7 @@ namespace TPWinForms
             {
                 pbxAddImagen.Load(img);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 pbxAddImagen.Load("https://www.tibs.org.tw/images/default.jpg");
             }
