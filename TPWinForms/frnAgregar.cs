@@ -61,9 +61,9 @@ namespace TPWinForms
                 creado.Codigo = this.tbCodigo.Text;
                 creado.Nombre = this.tbNombre.Text;
                 creado.Descripcion = this.tbDescripcion.Text;
-                creado.IdMarca = this.cbMarca.SelectedIndex;
+                //creado.IdMarca = this.cbMarca.SelectedIndex;
                 creado.Precio = Convert.ToDecimal(this.tbPrecio.Text);
-                creado.IdCategoria = this.cbCategoria.SelectedIndex;
+                //creado.IdCategoria = this.cbCategoria.SelectedIndex;
 
                 negocio.AgregarArticulo(creado);
                 MessageBox.Show("Agregado exitosamente");

@@ -34,25 +34,21 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAlter = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.agregarArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarArticuloToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.buscarToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.porNombreToolStripMenuItem2A = new System.Windows.Forms.ToolStripMenuItem();
-            this.porMarcaToolStripMenuItem2B = new System.Windows.Forms.ToolStripMenuItem();
-            this.porCódigoToolStripMenuItem2C = new System.Windows.Forms.ToolStripMenuItem();
-            this.porCategoríaToolStripMenuItem2D = new System.Windows.Forms.ToolStripMenuItem();
             this.cbFiltro = new System.Windows.Forms.CheckBox();
             this.reset = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblFiltro = new System.Windows.Forms.Label();
+            this.flechitaIzq = new System.Windows.Forms.Button();
+            this.flechitaD = new System.Windows.Forms.Button();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
+            this.lblImagen = new System.Windows.Forms.Label();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).BeginInit();
             this.gbxDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grillaArticulos
@@ -70,22 +66,27 @@
             // 
             // gbxDetalles
             // 
+            this.gbxDetalles.Controls.Add(this.label2);
+            this.gbxDetalles.Controls.Add(this.lblCantidad);
+            this.gbxDetalles.Controls.Add(this.lblImagen);
+            this.gbxDetalles.Controls.Add(this.flechitaIzq);
+            this.gbxDetalles.Controls.Add(this.flechitaD);
             this.gbxDetalles.Controls.Add(this.btnDelete);
             this.gbxDetalles.Controls.Add(this.btnAlter);
             this.gbxDetalles.Controls.Add(this.btnCerrar);
             this.gbxDetalles.Controls.Add(this.pbxImagen);
             this.gbxDetalles.Controls.Add(this.lblDescripcion);
             this.gbxDetalles.Controls.Add(this.lblNombre);
-            this.gbxDetalles.Location = new System.Drawing.Point(784, 57);
+            this.gbxDetalles.Location = new System.Drawing.Point(765, 57);
             this.gbxDetalles.Name = "gbxDetalles";
-            this.gbxDetalles.Size = new System.Drawing.Size(398, 443);
+            this.gbxDetalles.Size = new System.Drawing.Size(453, 443);
             this.gbxDetalles.TabIndex = 3;
             this.gbxDetalles.TabStop = false;
             this.gbxDetalles.Text = "Detalles";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(160, 401);
+            this.btnDelete.Location = new System.Drawing.Point(186, 409);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 5;
@@ -95,7 +96,7 @@
             // 
             // btnAlter
             // 
-            this.btnAlter.Location = new System.Drawing.Point(270, 401);
+            this.btnAlter.Location = new System.Drawing.Point(296, 409);
             this.btnAlter.Name = "btnAlter";
             this.btnAlter.Size = new System.Drawing.Size(75, 23);
             this.btnAlter.TabIndex = 4;
@@ -105,7 +106,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(45, 401);
+            this.btnCerrar.Location = new System.Drawing.Point(71, 409);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
             this.btnCerrar.TabIndex = 3;
@@ -113,19 +114,10 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // pbxImagen
-            // 
-            this.pbxImagen.Location = new System.Drawing.Point(35, 137);
-            this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(344, 244);
-            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxImagen.TabIndex = 2;
-            this.pbxImagen.TabStop = false;
-            // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(163, 104);
+            this.lblDescripcion.Location = new System.Drawing.Point(187, 104);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 1;
@@ -134,76 +126,11 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(163, 71);
+            this.lblNombre.Location = new System.Drawing.Point(196, 71);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarArticuloToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1230, 24);
-            this.menuStrip1.TabIndex = 4;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // agregarArticuloToolStripMenuItem
-            // 
-            this.agregarArticuloToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarArticuloToolStripMenuItem1,
-            this.buscarToolStripMenuItem2});
-            this.agregarArticuloToolStripMenuItem.Name = "agregarArticuloToolStripMenuItem";
-            this.agregarArticuloToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.agregarArticuloToolStripMenuItem.Text = "Articulos";
-            // 
-            // agregarArticuloToolStripMenuItem1
-            // 
-            this.agregarArticuloToolStripMenuItem1.Name = "agregarArticuloToolStripMenuItem1";
-            this.agregarArticuloToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
-            this.agregarArticuloToolStripMenuItem1.Text = "Agregar Articulo";
-            this.agregarArticuloToolStripMenuItem1.Click += new System.EventHandler(this.agregarArticuloToolStripMenuItem1_Click);
-            // 
-            // buscarToolStripMenuItem2
-            // 
-            this.buscarToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.porNombreToolStripMenuItem2A,
-            this.porMarcaToolStripMenuItem2B,
-            this.porCódigoToolStripMenuItem2C,
-            this.porCategoríaToolStripMenuItem2D});
-            this.buscarToolStripMenuItem2.Name = "buscarToolStripMenuItem2";
-            this.buscarToolStripMenuItem2.Size = new System.Drawing.Size(161, 22);
-            this.buscarToolStripMenuItem2.Text = "Buscar";
-            // 
-            // porNombreToolStripMenuItem2A
-            // 
-            this.porNombreToolStripMenuItem2A.Name = "porNombreToolStripMenuItem2A";
-            this.porNombreToolStripMenuItem2A.Size = new System.Drawing.Size(144, 22);
-            this.porNombreToolStripMenuItem2A.Text = "Por nombre";
-            this.porNombreToolStripMenuItem2A.Click += new System.EventHandler(this.porNombreToolStripMenuItem2A_Click);
-            // 
-            // porMarcaToolStripMenuItem2B
-            // 
-            this.porMarcaToolStripMenuItem2B.Name = "porMarcaToolStripMenuItem2B";
-            this.porMarcaToolStripMenuItem2B.Size = new System.Drawing.Size(144, 22);
-            this.porMarcaToolStripMenuItem2B.Text = "Por marca";
-            this.porMarcaToolStripMenuItem2B.Click += new System.EventHandler(this.porMarcaToolStripMenuItem2B_Click);
-            // 
-            // porCódigoToolStripMenuItem2C
-            // 
-            this.porCódigoToolStripMenuItem2C.Name = "porCódigoToolStripMenuItem2C";
-            this.porCódigoToolStripMenuItem2C.Size = new System.Drawing.Size(144, 22);
-            this.porCódigoToolStripMenuItem2C.Text = "Por código";
-            this.porCódigoToolStripMenuItem2C.Click += new System.EventHandler(this.porCódigoToolStripMenuItem2C_Click);
-            // 
-            // porCategoríaToolStripMenuItem2D
-            // 
-            this.porCategoríaToolStripMenuItem2D.Name = "porCategoríaToolStripMenuItem2D";
-            this.porCategoríaToolStripMenuItem2D.Size = new System.Drawing.Size(144, 22);
-            this.porCategoríaToolStripMenuItem2D.Text = "Por categoría";
-            this.porCategoríaToolStripMenuItem2D.Click += new System.EventHandler(this.porCategoríaToolStripMenuItem2D_Click);
             // 
             // cbFiltro
             // 
@@ -246,6 +173,62 @@
             this.lblFiltro.TabIndex = 8;
             this.lblFiltro.Text = "Filtro:";
             // 
+            // flechitaIzq
+            // 
+            this.flechitaIzq.Image = global::TPWinForms.Properties.Resources.flechitaIzq;
+            this.flechitaIzq.Location = new System.Drawing.Point(8, 202);
+            this.flechitaIzq.Name = "flechitaIzq";
+            this.flechitaIzq.Size = new System.Drawing.Size(57, 105);
+            this.flechitaIzq.TabIndex = 7;
+            this.flechitaIzq.UseVisualStyleBackColor = true;
+            this.flechitaIzq.Click += new System.EventHandler(this.flechitaIzq_Click);
+            // 
+            // flechitaD
+            // 
+            this.flechitaD.Image = global::TPWinForms.Properties.Resources.flechita1;
+            this.flechitaD.Location = new System.Drawing.Point(377, 202);
+            this.flechitaD.Name = "flechitaD";
+            this.flechitaD.Size = new System.Drawing.Size(57, 105);
+            this.flechitaD.TabIndex = 6;
+            this.flechitaD.UseVisualStyleBackColor = true;
+            this.flechitaD.Click += new System.EventHandler(this.flechitaD_Click);
+            // 
+            // pbxImagen
+            // 
+            this.pbxImagen.Location = new System.Drawing.Point(71, 133);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(300, 244);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagen.TabIndex = 2;
+            this.pbxImagen.TabStop = false;
+            // 
+            // lblImagen
+            // 
+            this.lblImagen.AutoSize = true;
+            this.lblImagen.Location = new System.Drawing.Point(207, 386);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(57, 13);
+            this.lblImagen.TabIndex = 8;
+            this.lblImagen.Text = "foto actual";
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(234, 386);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(89, 13);
+            this.lblCantidad.TabIndex = 9;
+            this.lblCantidad.Text = "cantidad de fotos";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(222, 387);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(12, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "/";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -258,9 +241,7 @@
             this.Controls.Add(this.cbFiltro);
             this.Controls.Add(this.gbxDetalles);
             this.Controls.Add(this.grillaArticulos);
-            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormApp";
@@ -270,8 +251,6 @@
             this.gbxDetalles.ResumeLayout(false);
             this.gbxDetalles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,20 +263,17 @@
         private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem agregarArticuloToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarArticuloToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem porNombreToolStripMenuItem2A;
-        private System.Windows.Forms.ToolStripMenuItem porMarcaToolStripMenuItem2B;
-        private System.Windows.Forms.ToolStripMenuItem porCódigoToolStripMenuItem2C;
-        private System.Windows.Forms.ToolStripMenuItem porCategoríaToolStripMenuItem2D;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.CheckBox cbFiltro;
         public System.Windows.Forms.DataGridView grillaArticulos;
         private System.Windows.Forms.Button reset;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label lblFiltro;
+        private System.Windows.Forms.Button flechitaD;
+        private System.Windows.Forms.Button flechitaIzq;
+        private System.Windows.Forms.Label lblImagen;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCantidad;
     }
 }
 

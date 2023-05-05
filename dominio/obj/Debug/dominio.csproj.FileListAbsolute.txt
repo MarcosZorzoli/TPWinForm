@@ -10,3 +10,9 @@ C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\dominio\obj\Debug\dominio.csproj.Assem
 C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
 C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\dominio\obj\Debug\dominio.dll
 C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\dominio\obj\Debug\dominio.pdb
+C:\Users\manue\Desktop\Repositorios Github\TPWinForm-main\dominio\bin\Debug\dominio.dll
+C:\Users\manue\Desktop\Repositorios Github\TPWinForm-main\dominio\bin\Debug\dominio.pdb
+C:\Users\manue\Desktop\Repositorios Github\TPWinForm-main\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\manue\Desktop\Repositorios Github\TPWinForm-main\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\manue\Desktop\Repositorios Github\TPWinForm-main\dominio\obj\Debug\dominio.dll
+C:\Users\manue\Desktop\Repositorios Github\TPWinForm-main\dominio\obj\Debug\dominio.pdb

@@ -14,10 +14,12 @@ namespace negocio
         {
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
+            NegocioImagen misImagens = new NegocioImagen();
 
             try
             {
-                datos.setearConsulta("Select Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio  from ARTICULOS ");
+                datos.setearConsulta("Select a.Id, Codigo, Nombre,a.Descripcion,a.IdMarca,idcategoria,c.DESCRIPCION as Categoria,m.DESCRIPCION as Marca,Precio from ARTICULOS a , categorias c, marcas m where a.idcategoria=c.ID and a.idMarca=m.id");
+              
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -26,26 +28,18 @@ namespace negocio
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    aux.IdMarca = datos.Lector.GetInt32(4);
-                    aux.IdCategoria = datos.Lector.GetInt32(5);
-                    aux.Precio = datos.Lector.GetDecimal(6);
-                    //aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
-                    if (lista.Count == 0)
-                    {
-                        lista.Add(aux);
+                  
+                    aux.Categoria  = new Categoria();
 
-                    }
-                    else
-
-                    if (lista.Last().Id == aux.Id)
-                    {
-
-                        lista.Remove(aux);
-                    }
-                    else
-                    {
-                        lista.Add(aux);
-                    }
+                    aux.Categoria.Id = datos.Lector.GetInt32(5);
+                    aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    aux.Marca = new Marca();
+                    aux.Marca.Id = datos.Lector.GetInt32(4);
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Imagenes = misImagens.Listar(datos.Lector.GetInt32(0));
+                    lista.Add(aux);
+                    
 
 
                 }
@@ -91,10 +85,10 @@ namespace negocio
                         aux.Codigo = (string)lector["Codigo"];
                         aux.Nombre = (string)lector["Nombre"];
                         aux.Descripcion = (string)lector["Descripcion"];
-                        aux.IdMarca = lector.GetInt32(4);
-                        aux.IdCategoria = lector.GetInt32(5);
+                       // aux.IdMarca = lector.GetInt32(4);
+                        //aux.IdCategoria = lector.GetInt32(5);
                         aux.Precio = lector.GetDecimal(6);
-                        aux.UrlImagen = (string)lector["ImagenUrl"];
+                        //aux.UrlImagen = (string)lector["ImagenUrl"];
                         if (lista.Count == 0)
                         {
                             lista.Add(aux);
@@ -143,35 +137,35 @@ namespace negocio
                 {
                     Articulo aux = new Articulo();
                     id = lector.GetInt32(0);
-                    if (id == aux.IdMarca)
-                    {
-                        aux.Id = lector.GetInt32(0);
-                        aux.Codigo = (string)lector["Codigo"];
-                        aux.Nombre = (string)lector["Nombre"];
-                        aux.Descripcion = (string)lector["Descripcion"];
-                        aux.IdMarca = lector.GetInt32(4);
-                        aux.IdCategoria = lector.GetInt32(5);
-                        aux.Precio = lector.GetDecimal(6);
-                        aux.UrlImagen = (string)lector["ImagenUrl"];
-                        if (lista.Count == 0)
-                        {
-                            lista.Add(aux);
+                    /* if (id == aux.IdMarca)
+                     {
+                         aux.Id = lector.GetInt32(0);
+                         aux.Codigo = (string)lector["Codigo"];
+                         aux.Nombre = (string)lector["Nombre"];
+                         aux.Descripcion = (string)lector["Descripcion"];
+                         aux.IdMarca = lector.GetInt32(4);
+                         //aux.IdCategoria = lector.GetInt32(5);
+                         aux.Precio = lector.GetDecimal(6);
+                         //aux.UrlImagen = (string)lector["ImagenUrl"];
+                         if (lista.Count == 0)
+                         {
+                             lista.Add(aux);
 
-                        }
-                        else
+                         }
+                         else
 
-                    if (lista.Last().Id == aux.Id)
-                        {
+                     if (lista.Last().Id == aux.Id)
+                         {
 
-                            lista.Remove(aux);
-                        }
-                        else
-                        {
-                            lista.Add(aux);
-                        }
-                    }
+                             lista.Remove(aux);
+                         }
+                         else
+                         {
+                             lista.Add(aux);
+                         }
+                     }
 
-
+                     */
                 }
                 conexion.Close();
                 return lista;
@@ -190,10 +184,10 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)" +
+                /*datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)" +
                     " values ('" + agregar.Codigo + "','"+agregar.Nombre+"','"+ agregar.Descripcion + "',@IdMarca,@IdCategoria,'" + agregar.Precio +"')");
                 datos.setearParametro("@IdMarca", agregar.IdMarca + 1);
-                datos.setearParametro("@IdCategoria", agregar.IdCategoria + 1);
+                //datos.setearParametro("@IdCategoria", agregar.IdCategoria + 1);*/
                 datos.ejecutarAccion();
             }
             catch (Exception ex)
@@ -221,8 +215,8 @@ namespace negocio
                 datos.setearParametro("@codigo", modificado.Codigo);
                 datos.setearParametro("@nombre", modificado.Nombre);
                 datos.setearParametro("@descripcion", modificado.Descripcion);
-                datos.setearParametro("@idmarca", modificado.IdMarca);
-                datos.setearParametro("@idcategoria", modificado.IdCategoria);
+                datos.setearParametro("@idmarca", modificado.Marca.Id);
+                datos.setearParametro("@idcategoria", modificado.Categoria.Id);
                 datos.setearParametro("@precio", modificado.Precio);
                 datos.EjecutarAccion();
             }

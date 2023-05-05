@@ -30,11 +30,17 @@ namespace TPWinForms
         }
         public void Cargar()
         {
-            cbMarcaAlterar.Items.Add("Samsung");
-            cbMarcaAlterar.Items.Add("Apple");
-            cbMarcaAlterar.Items.Add("Sony");
-            cbMarcaAlterar.Items.Add("Huawey");
-            cbMarcaAlterar.Items.Add("Motorola");
+        
+
+            NegocioCategoria categorias = new NegocioCategoria();
+            cboCategorias.DataSource = categorias.Listar();
+            cboCategorias.ValueMember = "Id";
+            cboCategorias.DisplayMember = "Descripcion";
+            NegocioMarca marcas = new NegocioMarca();   
+
+            cboMarcas.DataSource=marcas.Listar();
+            cboMarcas.ValueMember = "Id";
+            cboMarcas.DisplayMember = "Descripcion";
 
             this.tbNombre.Text = obj.Nombre;
 
@@ -43,11 +49,12 @@ namespace TPWinForms
             this.tbDescripcion.Text = obj.Descripcion;
             try
             {
-                this.cbMarcaAlterar.Text = cbMarcaAlterar.Items[obj.IdMarca].ToString();
+                cboCategorias.SelectedValue = obj.Categoria.Id;
+                cboMarcas.SelectedValue = obj.Categoria.Id;
             }
             catch (Exception)
             {
-                this.cbMarcaAlterar.Text = cbMarcaAlterar.Items[1].ToString();
+                
                 throw;
             }
 
@@ -81,6 +88,7 @@ namespace TPWinForms
         {
             DialogResult dialogResult = MessageBox.Show("Seguro que quiere Modificar este Articulo?", "Confirmar", MessageBoxButtons.OKCancel);
             NegocioArticulo negocio = new NegocioArticulo();
+            NegocioMarca negocioMarca = new NegocioMarca();
             if (dialogResult == DialogResult.OK)
             {
                 
@@ -88,8 +96,10 @@ namespace TPWinForms
                 obj.Descripcion = this.tbDescripcion.Text;
                 obj.Nombre = this.tbNombre.Text;
                 obj.Precio = Convert.ToDecimal(this.tbPrecio.Text);
-                obj.IdMarca = this.cbMarcaAlterar.SelectedIndex;
+                obj.Marca = (Marca)cboMarcas.SelectedItem;
+                obj.Categoria = (Categoria)cboCategorias.SelectedItem;
                 negocio.ModificarArticulo(obj);
+                
 
                 Close();
 

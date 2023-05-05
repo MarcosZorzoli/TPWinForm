@@ -92,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -115,6 +116,15 @@
       <Project>{472553fd-c250-47a9-a71a-d6d672d68447}</Project>
       <Name>negocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flechita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flechita1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flechitaIzq.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

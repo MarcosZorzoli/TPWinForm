@@ -21,6 +21,7 @@ namespace TPWinForms
 
         public List<Articulo> myList = new List<Articulo>();
         public List<Articulo> ListaAnterior = new List<Articulo>();
+        public int ubicacion = 0;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -36,12 +37,14 @@ namespace TPWinForms
         {
             gbxDetalles.Visible = true;
             Articulo item = (Articulo)grillaArticulos.CurrentRow.DataBoundItem;
-
+            lblImagen.Text = (ubicacion+1).ToString();
+            lblCantidad.Text = (item.Imagenes.Count).ToString();
             lblNombre.Text = item.Nombre;
             lblDescripcion.Text = item.Descripcion;
+            ubicacion = 0;
             try
             {
-                pbxImagen.Load(item.UrlImagen);
+                pbxImagen.Load(item.Imagenes[0].Url);
             }
 
             catch
@@ -205,6 +208,67 @@ namespace TPWinForms
                 grillaArticulos.DataSource = null;
                 grillaArticulos.DataSource = listaFiltro;
 
+        }
+
+        private void flechitaD_Click(object sender, EventArgs e)
+        {
+            Articulo item = (Articulo)grillaArticulos.CurrentRow.DataBoundItem;
+
+            if(ubicacion>=item.Imagenes.Count-1)
+            {
+                ubicacion = 0;
+            }
+            else
+            {
+                ubicacion++;
+            }
+                try
+                {
+                    pbxImagen.Load(item.Imagenes[ubicacion].Url);
+               
+            }
+
+                catch
+                {
+
+                    pbxImagen.Load("https://www.tibs.org.tw/images/default.jpg");
+                //pbxImagen.Load("https://intercompras.com/product_thumb_keepratio_2.php?img=images/product/SONY_KDL-55W950A.jpg&w=650&h=450"); 
+                
+            }
+
+
+
+            lblImagen.Text = (ubicacion + 1).ToString();
+        }
+
+        private void flechitaIzq_Click(object sender, EventArgs e)
+        {
+            Articulo item = (Articulo)grillaArticulos.CurrentRow.DataBoundItem;
+          
+            if (ubicacion <= 0)
+            {
+                ubicacion = item.Imagenes.Count-1;
+            }else
+            {
+                ubicacion--;
+            }
+            
+                try
+                {
+                    pbxImagen.Load(item.Imagenes[ubicacion].Url);
+                
+            }
+
+                catch
+                {
+
+                    pbxImagen.Load("https://www.tibs.org.tw/images/default.jpg");
+               
+                //pbxImagen.Load("https://intercompras.com/product_thumb_keepratio_2.php?img=images/product/SONY_KDL-55W950A.jpg&w=650&h=450"); 
+            }
+           
+            
+            lblImagen.Text = (ubicacion+1).ToString();
         }
     }
 }
