@@ -15,7 +15,6 @@ namespace negocio
             List<Articulo> lista = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
 
-
             try
             {
                 datos.setearConsulta("Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo");
@@ -65,6 +64,7 @@ namespace negocio
             }
 
         }
+
 
         public List<Articulo> ListarXNombre(string nombre)
         {
@@ -200,19 +200,26 @@ namespace negocio
             listaActual = aux;
 
         }
-        public void AgregarArticulo(ref Articulo target, ref List<Articulo> listaActual)
+        public void AgregarArticulo(Articulo agregar)
         {
-            List<Articulo> aux = new List<Articulo>();
-
-            for (int i = 0; i < listaActual.Count; i++)
+            AccesoDatos datos = new AccesoDatos();
+            try
             {
-                aux.Add(listaActual[i]);
-
+                datos.setearConsulta("insert into ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio)" +
+                    " values ('" + agregar.Codigo + "','"+agregar.Nombre+"','"+ agregar.Descripcion + "',@IdMarca,@IdCategoria,'" + agregar.Precio +"')");
+                datos.setearParametro("@IdMarca", agregar.IdMarca + 1);
+                datos.setearParametro("@IdCategoria", agregar.IdCategoria + 1);
+                datos.ejecutarAccion();
             }
+            catch (Exception ex)
+            {
 
-            aux.Add(target);
-            listaActual = aux;
-
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
 
 
