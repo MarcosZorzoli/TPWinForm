@@ -52,7 +52,6 @@
     <Compile Include="Alterar.Designer.cs">
       <DependentUpon>Alterar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Articulo.cs" />
     <Compile Include="Busqueda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,7 +70,6 @@
     <Compile Include="frnAgregar.Designer.cs">
       <DependentUpon>frnAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="NegocioArticulo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Alterar.resx">
@@ -107,6 +105,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dominio\dominio.csproj">
+      <Project>{03fec900-81de-4c25-8bdb-240bb685a61a}</Project>
+      <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\negocio\negocio.csproj">
+      <Project>{472553fd-c250-47a9-a71a-d6d672d68447}</Project>
+      <Name>negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

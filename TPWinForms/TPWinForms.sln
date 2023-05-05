@@ -5,6 +5,10 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPWinForms", "TPWinForms.csproj", "{528D410C-0E4F-4BDC-987B-7F658EF74956}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "..\dominio\dominio.csproj", "{03FEC900-81DE-4C25-8BDB-240BB685A61A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "negocio", "..\negocio\negocio.csproj", "{472553FD-C250-47A9-A71A-D6D672D68447}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{528D410C-0E4F-4BDC-987B-7F658EF74956}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{528D410C-0E4F-4BDC-987B-7F658EF74956}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{528D410C-0E4F-4BDC-987B-7F658EF74956}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03FEC900-81DE-4C25-8BDB-240BB685A61A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03FEC900-81DE-4C25-8BDB-240BB685A61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03FEC900-81DE-4C25-8BDB-240BB685A61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03FEC900-81DE-4C25-8BDB-240BB685A61A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{472553FD-C250-47A9-A71A-D6D672D68447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{472553FD-C250-47A9-A71A-D6D672D68447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{472553FD-C250-47A9-A71A-D6D672D68447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{472553FD-C250-47A9-A71A-D6D672D68447}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
