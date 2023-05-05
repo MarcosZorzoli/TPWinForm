@@ -32,12 +32,6 @@ namespace TPWinForms
             
         }
 
-        public void AddArticuloToGrid(Articulo newData)
-        {
-            NegocioArticulo servicio = new NegocioArticulo();
-            servicio.AgregarArticulo(ref newData, ref myList);
-        }
-
         private void grillaArticulos_SelectionChanged(object sender, EventArgs e)
         {
             gbxDetalles.Visible = true;
@@ -68,7 +62,7 @@ namespace TPWinForms
 
         private void agregarArticuloToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frnAgregar ventanaAgregar = new frnAgregar(this);         
+            frnAgregar ventanaAgregar = new frnAgregar();         
             ventanaAgregar.ShowDialog();
         }
 

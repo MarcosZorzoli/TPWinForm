@@ -10,31 +10,35 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
+using negocio;
 
 namespace TPWinForms
 {
     public partial class frnAgregar : Form 
     {
         private Articulo creado = new Articulo();
-        
-        private Form1 _form1;
-        public frnAgregar(Form1 form1)
+        private Form1 form = new Form1();
+        public frnAgregar()
         {
             InitializeComponent();
-            _form1 = form1;
         }
 
         private void frnAgregar_Load(object sender, EventArgs e)
         {
+
             cbMarca.Items.Add("Samsung");
             cbMarca.Items.Add("Apple");
             cbMarca.Items.Add("Sony");
             cbMarca.Items.Add("Huawey");
             cbMarca.Items.Add("Motorola");
 
+            cbCategoria.Items.Add("Celulares");
+            cbCategoria.Items.Add("Televisores");
+            cbCategoria.Items.Add("Media");
+            cbCategoria.Items.Add("Audio");
+
             this.tbNombre.Text = " ";
 
-            this.numID.Value = 0;
             this.tbCodigo.Text = " ";
             this.tbDescripcion.Text = " ";
            
@@ -50,21 +54,30 @@ namespace TPWinForms
 
         private void btnagregar_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Seguro que quiere Agregar este Articulo?", "Confirmar", MessageBoxButtons.OKCancel);
+            NegocioArticulo negocio = new NegocioArticulo();
 
+            try
+            {
+                creado.Codigo = this.tbCodigo.Text;
+                creado.Nombre = this.tbNombre.Text;
+                creado.Descripcion = this.tbDescripcion.Text;
+                creado.IdMarca = this.cbMarca.SelectedIndex;
+                creado.Precio = Convert.ToDecimal(this.tbPrecio.Text);
+                creado.IdCategoria = this.cbCategoria.SelectedIndex;
 
-                        if (dialogResult == DialogResult.OK)
-                        {
-                             creado.Id = (int)this.numID.Value;
-                             creado.Codigo = this.tbCodigo.Text;
-                             creado.Nombre = this.tbNombre.Text;
-                             creado.Descripcion = this.tbDescripcion.Text;
-                             creado.IdMarca = this.cbMarca.SelectedIndex;
-                             creado.Precio = Convert.ToDecimal(this.tbPrecio.Text);
+                negocio.AgregarArticulo(creado);
+                MessageBox.Show("Agregado exitosamente");
 
-                            _form1.AddArticuloToGrid(creado);      
-                            this.Close();
-                        }
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+                            
+             
+                        
         }
 
 
