@@ -115,6 +115,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Busqueda";
+            this.Load += new System.EventHandler(this.Busqueda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

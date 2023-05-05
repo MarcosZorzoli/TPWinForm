@@ -68,6 +68,8 @@ namespace TPWinForms
 
         private void porNombreToolStripMenuItem2A_Click(object sender, EventArgs e)
         {
+            if (cbFiltro.Visible == true)
+            { }
             string palabra;
             Busqueda ventanaBusqueda = new Busqueda(1);
             if (ventanaBusqueda.ShowDialog() == DialogResult.OK)
@@ -186,6 +188,23 @@ namespace TPWinForms
 
             grillaArticulos.DataSource = myList;
             gbxDetalles.Visible = false;
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltro;
+            string filtro = txtFiltro.Text;
+            if(filtro!=""&&filtro.Length>=3)
+            {
+                listaFiltro=myList.FindAll(x=>x.Nombre.ToUpper().Contains(filtro.ToUpper())||x.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+            }
+            else
+            {
+                listaFiltro = myList;
+            }
+                grillaArticulos.DataSource = null;
+                grillaArticulos.DataSource = listaFiltro;
+
         }
     }
 }

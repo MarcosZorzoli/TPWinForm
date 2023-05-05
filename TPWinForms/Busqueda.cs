@@ -16,10 +16,10 @@ namespace TPWinForms
     {
         public string palabra { set; get; }
         public int ID { set; get; }
-
         public Busqueda(int op)
         {
             InitializeComponent();
+
             if (op == 1) 
             {
                 labelBusqueda1.Visible = true;
@@ -55,5 +55,9 @@ namespace TPWinForms
 
         }
 
+        private void Busqueda_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
