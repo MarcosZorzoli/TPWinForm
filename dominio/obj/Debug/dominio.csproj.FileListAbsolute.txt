@@ -28,3 +28,9 @@ C:\Users\manue\Desktop\New folder\TPWinForm-main\dominio\obj\Debug\dominio.cspro
 C:\Users\manue\Desktop\New folder\TPWinForm-main\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
 C:\Users\manue\Desktop\New folder\TPWinForm-main\dominio\obj\Debug\dominio.dll
 C:\Users\manue\Desktop\New folder\TPWinForm-main\dominio\obj\Debug\dominio.pdb
+D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion\TPWinForm\dominio\bin\Debug\dominio.dll
+D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion\TPWinForm\dominio\bin\Debug\dominio.pdb
+D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion\TPWinForm\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion\TPWinForm\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion\TPWinForm\dominio\obj\Debug\dominio.dll
+D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion\TPWinForm\dominio\obj\Debug\dominio.pdb

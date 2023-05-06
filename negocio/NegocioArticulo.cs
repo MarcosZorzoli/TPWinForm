@@ -116,7 +116,7 @@ namespace negocio
 
             try
             {
-                conexion.ConnectionString = "server=DESKTOP-6024H1Q; database=CATALOGO_P3_DB; integrated security=true";
+                conexion.ConnectionString = "server=Tobi\\SQLEXPRESST; database=CATALOGO_P3_DB; integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "Select A.Id, Codigo, Nombre,Descripcion,IdMarca,IdCategoria,Precio, ImagenUrl  from ARTICULOS A, IMAGENES I  WHERE A.Id=I.IdArticulo and A.Nombre=nombre";
                 comando.Connection = conexion;
@@ -287,20 +287,20 @@ namespace negocio
             {
                 string consulta = "Select a.Id, Codigo, Nombre,a.Descripcion,a.IdMarca,idcategoria,c.DESCRIPCION as Categoria,m.DESCRIPCION as Marca,Precio from ARTICULOS a , categorias c, marcas m where a.idcategoria=c.ID and a.idMarca=m.id and ";
 
-                if (campo == "Número")
+                if (campo == "Id")
                 {
-                    switch (campo)
+                    switch (criterio)
                     {
                         case "Mayor a":
-                            consulta += "Numero > " + filtro;
+                            consulta += "a.Id > " + filtro;
                             break;
 
                         case "Menor a":
-                            consulta += "Numero > " + filtro;
+                            consulta += "a.Id < " + filtro;
                             break;
 
                         case "Igual a":
-                            consulta += "Numero < " + filtro;
+                            consulta += "a.Id = " + filtro;
                             break;
 
                     }
@@ -308,25 +308,25 @@ namespace negocio
 
                 else if (campo == "Nombre")
                 {
-                    switch (campo)
+                    switch (criterio)
                     {
                         case "Comienza con":
-                            consulta += "Nombre like '" + filtro + "%' ";
+                            consulta += "Nombre like '[" + filtro + "]%' ";
                             break;
 
                         case "Termina con":
-                            consulta += "Nombre like %'" + filtro + "' ";
+                            consulta += "Nombre like '%[" + filtro + "]' ";
                             break;
 
                         case "Contiene":
-                            consulta += "Nombre like %'" + filtro + "%' ";
+                            consulta += "Nombre like '[%" + filtro + "%]' ";
                             break;
 
                     }
                 }
                 else if (campo == "Descripción")
                 {
-                    switch (campo)
+                    switch (criterio)
                     {
                         case "Comienza con":
                             consulta += "Descripcion like '" + filtro + "%' ";
