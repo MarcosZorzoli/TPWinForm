@@ -50,26 +50,29 @@
             this.btnBuscarFiltro = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.lblEmpezar = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.brnMaximize = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.grillaArticulos = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.flechitaIzq = new System.Windows.Forms.Button();
             this.flechitaD = new System.Windows.Forms.Button();
             this.pbxImagen = new System.Windows.Forms.PictureBox();
+            this.btnAbrirBusqueda = new System.Windows.Forms.Button();
             this.btnAboutUs = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.brnMaximize = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.grillaArticulos = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelSubMenu = new System.Windows.Forms.Panel();
             this.gbxDetalles.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
+            this.panelSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxDetalles
@@ -179,7 +182,7 @@
             // reset
             // 
             this.reset.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.reset.Location = new System.Drawing.Point(282, 605);
+            this.reset.Location = new System.Drawing.Point(457, 586);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(156, 23);
             this.reset.TabIndex = 6;
@@ -211,7 +214,8 @@
             // 
             this.lblCampo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCampo.AutoSize = true;
-            this.lblCampo.Location = new System.Drawing.Point(496, 606);
+            this.lblCampo.ForeColor = System.Drawing.Color.White;
+            this.lblCampo.Location = new System.Drawing.Point(4, 4);
             this.lblCampo.Name = "lblCampo";
             this.lblCampo.Size = new System.Drawing.Size(43, 13);
             this.lblCampo.TabIndex = 10;
@@ -221,7 +225,8 @@
             // 
             this.lblFiltroPro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFiltroPro.AutoSize = true;
-            this.lblFiltroPro.Location = new System.Drawing.Point(698, 606);
+            this.lblFiltroPro.ForeColor = System.Drawing.Color.White;
+            this.lblFiltroPro.Location = new System.Drawing.Point(68, 58);
             this.lblFiltroPro.Name = "lblFiltroPro";
             this.lblFiltroPro.Size = new System.Drawing.Size(32, 13);
             this.lblFiltroPro.TabIndex = 11;
@@ -231,7 +236,8 @@
             // 
             this.lblCriterio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCriterio.AutoSize = true;
-            this.lblCriterio.Location = new System.Drawing.Point(497, 643);
+            this.lblCriterio.ForeColor = System.Drawing.Color.White;
+            this.lblCriterio.Location = new System.Drawing.Point(5, 27);
             this.lblCriterio.Name = "lblCriterio";
             this.lblCriterio.Size = new System.Drawing.Size(42, 13);
             this.lblCriterio.TabIndex = 12;
@@ -239,10 +245,9 @@
             // 
             // cbxCampo
             // 
-            this.cbxCampo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxCampo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCampo.FormattingEnabled = true;
-            this.cbxCampo.Location = new System.Drawing.Point(558, 602);
+            this.cbxCampo.Location = new System.Drawing.Point(59, 1);
             this.cbxCampo.Name = "cbxCampo";
             this.cbxCampo.Size = new System.Drawing.Size(121, 21);
             this.cbxCampo.TabIndex = 13;
@@ -253,33 +258,38 @@
             this.cbxCriterio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbxCriterio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxCriterio.FormattingEnabled = true;
-            this.cbxCriterio.Location = new System.Drawing.Point(558, 639);
+            this.cbxCriterio.Location = new System.Drawing.Point(59, 22);
             this.cbxCriterio.Name = "cbxCriterio";
             this.cbxCriterio.Size = new System.Drawing.Size(121, 21);
             this.cbxCriterio.TabIndex = 14;
             // 
             // txtFiltrarA
             // 
-            this.txtFiltrarA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtFiltrarA.Location = new System.Drawing.Point(747, 602);
+            this.txtFiltrarA.Location = new System.Drawing.Point(0, 74);
             this.txtFiltrarA.Name = "txtFiltrarA";
-            this.txtFiltrarA.Size = new System.Drawing.Size(189, 20);
+            this.txtFiltrarA.Size = new System.Drawing.Size(180, 20);
             this.txtFiltrarA.TabIndex = 15;
             // 
             // btnBuscarFiltro
             // 
-            this.btnBuscarFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscarFiltro.Location = new System.Drawing.Point(747, 638);
+            this.btnBuscarFiltro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(70)))), ((int)(((byte)(80)))));
+            this.btnBuscarFiltro.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnBuscarFiltro.FlatAppearance.BorderSize = 0;
+            this.btnBuscarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarFiltro.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarFiltro.Location = new System.Drawing.Point(0, 113);
             this.btnBuscarFiltro.Name = "btnBuscarFiltro";
-            this.btnBuscarFiltro.Size = new System.Drawing.Size(71, 28);
+            this.btnBuscarFiltro.Size = new System.Drawing.Size(180, 28);
             this.btnBuscarFiltro.TabIndex = 16;
             this.btnBuscarFiltro.Text = "Buscar";
-            this.btnBuscarFiltro.UseVisualStyleBackColor = true;
+            this.btnBuscarFiltro.UseVisualStyleBackColor = false;
             this.btnBuscarFiltro.Click += new System.EventHandler(this.btnBuscarFiltro_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panel1.Controls.Add(this.panelSubMenu);
+            this.panel1.Controls.Add(this.btnAbrirBusqueda);
             this.panel1.Controls.Add(this.btnAboutUs);
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.panel2);
@@ -300,6 +310,17 @@
             this.panel2.Size = new System.Drawing.Size(180, 100);
             this.panel2.TabIndex = 0;
             // 
+            // lblEmpezar
+            // 
+            this.lblEmpezar.AutoSize = true;
+            this.lblEmpezar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpezar.ForeColor = System.Drawing.Color.White;
+            this.lblEmpezar.Location = new System.Drawing.Point(3, 36);
+            this.lblEmpezar.Name = "lblEmpezar";
+            this.lblEmpezar.Size = new System.Drawing.Size(182, 17);
+            this.lblEmpezar.TabIndex = 1;
+            this.lblEmpezar.Text = "NOMBRE DE LA EMPRESA";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
@@ -315,6 +336,51 @@
             this.panel3.Size = new System.Drawing.Size(1223, 100);
             this.panel3.TabIndex = 18;
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(1190, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 11;
+            this.btnClose.Text = "O";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Location = new System.Drawing.Point(1124, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimize.TabIndex = 10;
+            this.btnMinimize.Text = "O";
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // brnMaximize
+            // 
+            this.brnMaximize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.brnMaximize.FlatAppearance.BorderSize = 0;
+            this.brnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.brnMaximize.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnMaximize.ForeColor = System.Drawing.Color.White;
+            this.brnMaximize.Location = new System.Drawing.Point(1157, 0);
+            this.brnMaximize.Name = "brnMaximize";
+            this.brnMaximize.Size = new System.Drawing.Size(30, 30);
+            this.brnMaximize.TabIndex = 9;
+            this.brnMaximize.Text = "O";
+            this.brnMaximize.UseVisualStyleBackColor = true;
+            this.brnMaximize.Click += new System.EventHandler(this.brnMaximize_Click);
+            // 
             // lblTitle
             // 
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -328,16 +394,31 @@
             this.lblTitle.Text = "ARTICULOS";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblEmpezar
+            // grillaArticulos
             // 
-            this.lblEmpezar.AutoSize = true;
-            this.lblEmpezar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpezar.ForeColor = System.Drawing.Color.White;
-            this.lblEmpezar.Location = new System.Drawing.Point(3, 36);
-            this.lblEmpezar.Name = "lblEmpezar";
-            this.lblEmpezar.Size = new System.Drawing.Size(182, 17);
-            this.lblEmpezar.TabIndex = 1;
-            this.lblEmpezar.Text = "NOMBRE DE LA EMPRESA";
+            this.grillaArticulos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grillaArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.grillaArticulos.BackgroundColor = System.Drawing.Color.DimGray;
+            this.grillaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaArticulos.Location = new System.Drawing.Point(203, 127);
+            this.grillaArticulos.MultiSelect = false;
+            this.grillaArticulos.Name = "grillaArticulos";
+            this.grillaArticulos.Size = new System.Drawing.Size(733, 443);
+            this.grillaArticulos.TabIndex = 0;
+            this.grillaArticulos.UseWaitCursor = true;
+            this.grillaArticulos.SelectionChanged += new System.EventHandler(this.grillaArticulos_SelectionChanged);
+            this.grillaArticulos.Enter += new System.EventHandler(this.grillaArticulos_Enter);
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.Controls.Add(this.reset);
+            this.panel4.Controls.Add(this.grillaArticulos);
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1403, 669);
+            this.panel4.TabIndex = 19;
             // 
             // flechitaIzq
             // 
@@ -370,6 +451,23 @@
             this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagen.TabIndex = 2;
             this.pbxImagen.TabStop = false;
+            // 
+            // btnAbrirBusqueda
+            // 
+            this.btnAbrirBusqueda.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAbrirBusqueda.FlatAppearance.BorderSize = 0;
+            this.btnAbrirBusqueda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirBusqueda.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnAbrirBusqueda.Image = global::TPWinForms.Properties.Resources.icons8_search_25px;
+            this.btnAbrirBusqueda.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAbrirBusqueda.Location = new System.Drawing.Point(0, 160);
+            this.btnAbrirBusqueda.Name = "btnAbrirBusqueda";
+            this.btnAbrirBusqueda.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnAbrirBusqueda.Size = new System.Drawing.Size(180, 60);
+            this.btnAbrirBusqueda.TabIndex = 3;
+            this.btnAbrirBusqueda.Text = "Buscar Articulo";
+            this.btnAbrirBusqueda.UseVisualStyleBackColor = true;
+            this.btnAbrirBusqueda.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnAboutUs
             // 
@@ -405,74 +503,21 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // brnMaximize
+            // panelSubMenu
             // 
-            this.brnMaximize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.brnMaximize.FlatAppearance.BorderSize = 0;
-            this.brnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.brnMaximize.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnMaximize.ForeColor = System.Drawing.Color.White;
-            this.brnMaximize.Location = new System.Drawing.Point(1157, 0);
-            this.brnMaximize.Name = "brnMaximize";
-            this.brnMaximize.Size = new System.Drawing.Size(30, 30);
-            this.brnMaximize.TabIndex = 9;
-            this.brnMaximize.Text = "O";
-            this.brnMaximize.UseVisualStyleBackColor = true;
-            this.brnMaximize.Click += new System.EventHandler(this.brnMaximize_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(1124, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimize.TabIndex = 10;
-            this.btnMinimize.Text = "O";
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1190, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 11;
-            this.btnClose.Text = "O";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // grillaArticulos
-            // 
-            this.grillaArticulos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grillaArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.grillaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaArticulos.Location = new System.Drawing.Point(203, 127);
-            this.grillaArticulos.MultiSelect = false;
-            this.grillaArticulos.Name = "grillaArticulos";
-            this.grillaArticulos.Size = new System.Drawing.Size(733, 443);
-            this.grillaArticulos.TabIndex = 0;
-            this.grillaArticulos.UseWaitCursor = true;
-            this.grillaArticulos.SelectionChanged += new System.EventHandler(this.grillaArticulos_SelectionChanged);
-            this.grillaArticulos.Enter += new System.EventHandler(this.grillaArticulos_Enter);
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Controls.Add(this.grillaArticulos);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1403, 669);
-            this.panel4.TabIndex = 19;
+            this.panelSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
+            this.panelSubMenu.Controls.Add(this.btnBuscarFiltro);
+            this.panelSubMenu.Controls.Add(this.cbxCampo);
+            this.panelSubMenu.Controls.Add(this.lblFiltroPro);
+            this.panelSubMenu.Controls.Add(this.txtFiltrarA);
+            this.panelSubMenu.Controls.Add(this.lblCampo);
+            this.panelSubMenu.Controls.Add(this.lblCriterio);
+            this.panelSubMenu.Controls.Add(this.cbxCriterio);
+            this.panelSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenu.Location = new System.Drawing.Point(0, 220);
+            this.panelSubMenu.Name = "panelSubMenu";
+            this.panelSubMenu.Size = new System.Drawing.Size(180, 141);
+            this.panelSubMenu.TabIndex = 4;
             // 
             // Form1
             // 
@@ -480,14 +525,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1403, 669);
-            this.Controls.Add(this.btnBuscarFiltro);
-            this.Controls.Add(this.txtFiltrarA);
-            this.Controls.Add(this.cbxCriterio);
-            this.Controls.Add(this.cbxCampo);
-            this.Controls.Add(this.lblCriterio);
-            this.Controls.Add(this.lblFiltroPro);
-            this.Controls.Add(this.lblCampo);
-            this.Controls.Add(this.reset);
             this.Controls.Add(this.gbxDetalles);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -506,11 +543,12 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).EndInit();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
+            this.panelSubMenu.ResumeLayout(false);
+            this.panelSubMenu.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -549,6 +587,8 @@
         private System.Windows.Forms.Button brnMaximize;
         public System.Windows.Forms.DataGridView grillaArticulos;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnAbrirBusqueda;
+        private System.Windows.Forms.Panel panelSubMenu;
     }
 }
 

@@ -19,6 +19,7 @@ namespace TPWinForms
         public Form1()
         {
             InitializeComponent();
+            CustomDesign();
         }
 
         public List<Articulo> myList = new List<Articulo>();
@@ -233,7 +234,8 @@ namespace TPWinForms
             {
                 MessageBox.Show(ex.ToString());
             }
-           
+
+            hideSubMenu();
         }
 
         private void cbxCampo_SelectedIndexChanged(object sender, EventArgs e)
@@ -290,6 +292,32 @@ namespace TPWinForms
 
             this.WindowState = FormWindowState.Minimized;
             
+        }
+
+        private void CustomDesign()
+        {
+            panelSubMenu.Visible = false;
+        }
+
+        private void hideSubMenu()
+        {
+            if(panelSubMenu.Visible ==true) { panelSubMenu.Visible = false; }
+        }
+
+        private void showSubMenu(Panel subMenu) 
+        {
+            if (subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+
+            }
+            else subMenu.Visible = false;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            showSubMenu(panelSubMenu);
         }
     }
 }
