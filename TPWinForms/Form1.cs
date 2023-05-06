@@ -255,5 +255,41 @@ namespace TPWinForms
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frnAgregar ventanaAgregar = new frnAgregar();
+            ventanaAgregar.ShowDialog();
+        }
+
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+            AboutUs aboutUsventana = new AboutUs();
+            aboutUsventana.ShowDialog();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void brnMaximize_Click(object sender, EventArgs e)
+        {
+            if(WindowState==FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState=FormWindowState.Normal;
+            }
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+
+            this.WindowState = FormWindowState.Minimized;
+            
+        }
     }
 }

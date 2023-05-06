@@ -240,5 +240,10 @@ namespace TPWinForms
             int current = ubicacion + 1;
             lblImagen.Text = current.ToString();
         }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
