@@ -45,5 +45,10 @@ namespace TPWinForms
             }
 
         }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

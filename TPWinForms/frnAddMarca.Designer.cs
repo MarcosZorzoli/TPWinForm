@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbNuevaMarca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnMinimize = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.btnMinimize);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -90,6 +92,21 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Descripcion/Nombre :";
             // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Location = new System.Drawing.Point(200, 1);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(18, 26);
+            this.btnMinimize.TabIndex = 12;
+            this.btnMinimize.Text = "X";
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
             // frnAddMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,6 +117,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tbNuevaMarca);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frnAddMarca";
             this.Text = "frnAddMarca";
             this.panel1.ResumeLayout(false);
@@ -116,5 +134,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbNuevaMarca;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnMinimize;
     }
 }

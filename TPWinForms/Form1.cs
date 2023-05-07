@@ -340,5 +340,7 @@ namespace TPWinForms
             frnAddCategoria ventanaCat = new frnAddCategoria();
             ventanaCat.ShowDialog();
         }
+
+
     }
 }

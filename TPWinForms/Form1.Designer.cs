@@ -220,7 +220,7 @@
             // reset
             // 
             this.reset.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.reset.Location = new System.Drawing.Point(466, 586);
+            this.reset.Location = new System.Drawing.Point(466, 564);
             this.reset.Name = "reset";
             this.reset.Size = new System.Drawing.Size(156, 23);
             this.reset.TabIndex = 6;
@@ -492,7 +492,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
+            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Controls.Add(this.btnMinimize);
             this.panel3.Controls.Add(this.brnMaximize);
@@ -569,7 +569,7 @@
             this.grillaArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.grillaArticulos.BackgroundColor = System.Drawing.Color.DimGray;
             this.grillaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaArticulos.Location = new System.Drawing.Point(212, 127);
+            this.grillaArticulos.Location = new System.Drawing.Point(212, 105);
             this.grillaArticulos.Name = "grillaArticulos";
             this.grillaArticulos.ReadOnly = true;
             this.grillaArticulos.Size = new System.Drawing.Size(733, 443);
@@ -584,9 +584,9 @@
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.Controls.Add(this.reset);
             this.panel4.Controls.Add(this.grillaArticulos);
-            this.panel4.Location = new System.Drawing.Point(-17, 0);
+            this.panel4.Location = new System.Drawing.Point(-17, 45);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1420, 669);
+            this.panel4.Size = new System.Drawing.Size(1420, 624);
             this.panel4.TabIndex = 19;
             // 
             // Form1
