@@ -34,5 +34,24 @@ namespace negocio
             }
             return lista;
         }
+
+        public void AgregarCategoria(Categoria cat)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into CATEGORIAS values ('"+cat.Descripcion+"')");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

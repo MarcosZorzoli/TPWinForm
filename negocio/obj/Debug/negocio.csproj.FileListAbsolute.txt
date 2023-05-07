@@ -52,3 +52,12 @@ D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion\TPWinForm\negocio\ob
 D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion\TPWinForm\negocio\obj\Debug\negocio.csproj.CopyComplete
 D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion\TPWinForm\negocio\obj\Debug\negocio.dll
 D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion\TPWinForm\negocio\obj\Debug\negocio.pdb
+D:\User\Desktop\C#\Programacion III\Winforms\Updated 2.0\TPWinForm\negocio\bin\Debug\negocio.dll
+D:\User\Desktop\C#\Programacion III\Winforms\Updated 2.0\TPWinForm\negocio\bin\Debug\negocio.pdb
+D:\User\Desktop\C#\Programacion III\Winforms\Updated 2.0\TPWinForm\negocio\bin\Debug\dominio.dll
+D:\User\Desktop\C#\Programacion III\Winforms\Updated 2.0\TPWinForm\negocio\bin\Debug\dominio.pdb
+D:\User\Desktop\C#\Programacion III\Winforms\Updated 2.0\TPWinForm\negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+D:\User\Desktop\C#\Programacion III\Winforms\Updated 2.0\TPWinForm\negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+D:\User\Desktop\C#\Programacion III\Winforms\Updated 2.0\TPWinForm\negocio\obj\Debug\negocio.csproj.CopyComplete
+D:\User\Desktop\C#\Programacion III\Winforms\Updated 2.0\TPWinForm\negocio\obj\Debug\negocio.dll
+D:\User\Desktop\C#\Programacion III\Winforms\Updated 2.0\TPWinForm\negocio\obj\Debug\negocio.pdb

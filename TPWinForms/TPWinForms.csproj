@@ -70,6 +70,18 @@
     <Compile Include="frmAgregarImagen.Designer.cs">
       <DependentUpon>frmAgregarImagen.cs</DependentUpon>
     </Compile>
+    <Compile Include="frnAddCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frnAddCategoria.Designer.cs">
+      <DependentUpon>frnAddCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frnAddMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frnAddMarca.Designer.cs">
+      <DependentUpon>frnAddMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frnAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgregarImagen.resx">
       <DependentUpon>frmAgregarImagen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frnAddCategoria.resx">
+      <DependentUpon>frnAddCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frnAddMarca.resx">
+      <DependentUpon>frnAddMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frnAgregar.resx">
       <DependentUpon>frnAgregar.cs</DependentUpon>

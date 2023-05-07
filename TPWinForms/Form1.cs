@@ -258,11 +258,6 @@ namespace TPWinForms
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frnAgregar ventanaAgregar = new frnAgregar();
-            ventanaAgregar.ShowDialog();
-        }
 
         private void btnAboutUs_Click(object sender, EventArgs e)
         {
@@ -297,6 +292,7 @@ namespace TPWinForms
         private void CustomDesign()
         {
             panelSubMenu.Visible = false;
+            panelSubMenuAgregar.Visible = false;
         }
 
         private void hideSubMenu()
@@ -315,9 +311,32 @@ namespace TPWinForms
             else subMenu.Visible = false;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelSubMenuAgregar);        
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            frnAgregar ventanaAgregar = new frnAgregar();
+            ventanaAgregar.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
             showSubMenu(panelSubMenu);
+        }
+
+        private void btnAgregarMarca_Click(object sender, EventArgs e)
+        {
+            frnAddMarca ventanaMarca = new frnAddMarca();
+            ventanaMarca.ShowDialog();
+        }
+
+        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        {
+            frnAddCategoria ventanaCat = new frnAddCategoria();
+            ventanaCat.ShowDialog();
         }
     }
 }
