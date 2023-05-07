@@ -133,3 +133,4 @@ D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion - copia\TPWinForm\TP
 D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion - copia\TPWinForm\TPWinForms\obj\Debug\TPWinForms.exe
 D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion - copia\TPWinForm\TPWinForms\obj\Debug\TPWinForms.pdb
 D:\User\Desktop\C#\Programacion III\Winforms\UpdatedVersion - copia\TPWinForm\TPWinForms\obj\Debug\TPWinForms.AboutUs.resources
+C:\Users\TT\Desktop\Curso C#\TP\TPWinForm\TPWinForms\obj\Debug\TPWinForms.AboutUs.resources

@@ -33,9 +33,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.lblImagen = new System.Windows.Forms.Label();
+            this.flechitaIzq = new System.Windows.Forms.Button();
+            this.flechitaD = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAlter = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.reset = new System.Windows.Forms.Button();
@@ -49,6 +52,10 @@
             this.txtFiltrarA = new System.Windows.Forms.TextBox();
             this.btnBuscarFiltro = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSubMenu = new System.Windows.Forms.Panel();
+            this.btnAbrirBusqueda = new System.Windows.Forms.Button();
+            this.btnAboutUs = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEmpezar = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -58,21 +65,14 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.grillaArticulos = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.flechitaIzq = new System.Windows.Forms.Button();
-            this.flechitaD = new System.Windows.Forms.Button();
-            this.pbxImagen = new System.Windows.Forms.PictureBox();
-            this.btnAbrirBusqueda = new System.Windows.Forms.Button();
-            this.btnAboutUs = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.panelSubMenu = new System.Windows.Forms.Panel();
             this.gbxDetalles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panelSubMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
-            this.panelSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbxDetalles
@@ -89,7 +89,7 @@
             this.gbxDetalles.Controls.Add(this.pbxImagen);
             this.gbxDetalles.Controls.Add(this.lblDescripcion);
             this.gbxDetalles.Controls.Add(this.lblNombre);
-            this.gbxDetalles.Location = new System.Drawing.Point(956, 145);
+            this.gbxDetalles.Location = new System.Drawing.Point(948, 145);
             this.gbxDetalles.Name = "gbxDetalles";
             this.gbxDetalles.Size = new System.Drawing.Size(411, 443);
             this.gbxDetalles.TabIndex = 3;
@@ -126,6 +126,28 @@
             this.lblImagen.TabIndex = 8;
             this.lblImagen.Text = "foto actual";
             // 
+            // flechitaIzq
+            // 
+            this.flechitaIzq.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flechitaIzq.Image = global::TPWinForms.Properties.Resources.flechitaIzq;
+            this.flechitaIzq.Location = new System.Drawing.Point(8, 202);
+            this.flechitaIzq.Name = "flechitaIzq";
+            this.flechitaIzq.Size = new System.Drawing.Size(57, 105);
+            this.flechitaIzq.TabIndex = 7;
+            this.flechitaIzq.UseVisualStyleBackColor = true;
+            this.flechitaIzq.Click += new System.EventHandler(this.flechitaIzq_Click);
+            // 
+            // flechitaD
+            // 
+            this.flechitaD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flechitaD.Image = global::TPWinForms.Properties.Resources.flechita1;
+            this.flechitaD.Location = new System.Drawing.Point(348, 202);
+            this.flechitaD.Name = "flechitaD";
+            this.flechitaD.Size = new System.Drawing.Size(57, 105);
+            this.flechitaD.TabIndex = 6;
+            this.flechitaD.UseVisualStyleBackColor = true;
+            this.flechitaD.Click += new System.EventHandler(this.flechitaD_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -158,6 +180,16 @@
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // pbxImagen
+            // 
+            this.pbxImagen.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbxImagen.Location = new System.Drawing.Point(71, 133);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(271, 241);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxImagen.TabIndex = 2;
+            this.pbxImagen.TabStop = false;
             // 
             // lblDescripcion
             // 
@@ -299,158 +331,21 @@
             this.panel1.Size = new System.Drawing.Size(180, 669);
             this.panel1.TabIndex = 17;
             // 
-            // panel2
+            // panelSubMenu
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panel2.Controls.Add(this.lblEmpezar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Enabled = false;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(180, 100);
-            this.panel2.TabIndex = 0;
-            // 
-            // lblEmpezar
-            // 
-            this.lblEmpezar.AutoSize = true;
-            this.lblEmpezar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpezar.ForeColor = System.Drawing.Color.White;
-            this.lblEmpezar.Location = new System.Drawing.Point(3, 36);
-            this.lblEmpezar.Name = "lblEmpezar";
-            this.lblEmpezar.Size = new System.Drawing.Size(182, 17);
-            this.lblEmpezar.TabIndex = 1;
-            this.lblEmpezar.Text = "NOMBRE DE LA EMPRESA";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panel3.Controls.Add(this.btnClose);
-            this.panel3.Controls.Add(this.btnMinimize);
-            this.panel3.Controls.Add(this.brnMaximize);
-            this.panel3.Controls.Add(this.lblFiltro);
-            this.panel3.Controls.Add(this.txtFiltro);
-            this.panel3.Controls.Add(this.lblTitle);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(180, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1223, 100);
-            this.panel3.TabIndex = 18;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1190, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(30, 30);
-            this.btnClose.TabIndex = 11;
-            this.btnClose.Text = "O";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(1124, 0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimize.TabIndex = 10;
-            this.btnMinimize.Text = "O";
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // brnMaximize
-            // 
-            this.brnMaximize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.brnMaximize.FlatAppearance.BorderSize = 0;
-            this.brnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.brnMaximize.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brnMaximize.ForeColor = System.Drawing.Color.White;
-            this.brnMaximize.Location = new System.Drawing.Point(1157, 0);
-            this.brnMaximize.Name = "brnMaximize";
-            this.brnMaximize.Size = new System.Drawing.Size(30, 30);
-            this.brnMaximize.TabIndex = 9;
-            this.brnMaximize.Text = "O";
-            this.brnMaximize.UseVisualStyleBackColor = true;
-            this.brnMaximize.Click += new System.EventHandler(this.brnMaximize_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Mongolian Baiti", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(515, 36);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(167, 29);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "ARTICULOS";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // grillaArticulos
-            // 
-            this.grillaArticulos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grillaArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.grillaArticulos.BackgroundColor = System.Drawing.Color.DimGray;
-            this.grillaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grillaArticulos.Location = new System.Drawing.Point(203, 127);
-            this.grillaArticulos.MultiSelect = false;
-            this.grillaArticulos.Name = "grillaArticulos";
-            this.grillaArticulos.Size = new System.Drawing.Size(733, 443);
-            this.grillaArticulos.TabIndex = 0;
-            this.grillaArticulos.UseWaitCursor = true;
-            this.grillaArticulos.SelectionChanged += new System.EventHandler(this.grillaArticulos_SelectionChanged);
-            this.grillaArticulos.Enter += new System.EventHandler(this.grillaArticulos_Enter);
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
-            this.panel4.Controls.Add(this.reset);
-            this.panel4.Controls.Add(this.grillaArticulos);
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1403, 669);
-            this.panel4.TabIndex = 19;
-            // 
-            // flechitaIzq
-            // 
-            this.flechitaIzq.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flechitaIzq.Image = global::TPWinForms.Properties.Resources.flechitaIzq;
-            this.flechitaIzq.Location = new System.Drawing.Point(8, 202);
-            this.flechitaIzq.Name = "flechitaIzq";
-            this.flechitaIzq.Size = new System.Drawing.Size(57, 105);
-            this.flechitaIzq.TabIndex = 7;
-            this.flechitaIzq.UseVisualStyleBackColor = true;
-            this.flechitaIzq.Click += new System.EventHandler(this.flechitaIzq_Click);
-            // 
-            // flechitaD
-            // 
-            this.flechitaD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.flechitaD.Image = global::TPWinForms.Properties.Resources.flechita1;
-            this.flechitaD.Location = new System.Drawing.Point(348, 202);
-            this.flechitaD.Name = "flechitaD";
-            this.flechitaD.Size = new System.Drawing.Size(57, 105);
-            this.flechitaD.TabIndex = 6;
-            this.flechitaD.UseVisualStyleBackColor = true;
-            this.flechitaD.Click += new System.EventHandler(this.flechitaD_Click);
-            // 
-            // pbxImagen
-            // 
-            this.pbxImagen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbxImagen.Location = new System.Drawing.Point(71, 133);
-            this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(271, 241);
-            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxImagen.TabIndex = 2;
-            this.pbxImagen.TabStop = false;
+            this.panelSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
+            this.panelSubMenu.Controls.Add(this.btnBuscarFiltro);
+            this.panelSubMenu.Controls.Add(this.cbxCampo);
+            this.panelSubMenu.Controls.Add(this.lblFiltroPro);
+            this.panelSubMenu.Controls.Add(this.txtFiltrarA);
+            this.panelSubMenu.Controls.Add(this.lblCampo);
+            this.panelSubMenu.Controls.Add(this.lblCriterio);
+            this.panelSubMenu.Controls.Add(this.cbxCriterio);
+            this.panelSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenu.Location = new System.Drawing.Point(0, 220);
+            this.panelSubMenu.Name = "panelSubMenu";
+            this.panelSubMenu.Size = new System.Drawing.Size(180, 141);
+            this.panelSubMenu.TabIndex = 4;
             // 
             // btnAbrirBusqueda
             // 
@@ -503,28 +398,133 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panelSubMenu
+            // panel2
             // 
-            this.panelSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
-            this.panelSubMenu.Controls.Add(this.btnBuscarFiltro);
-            this.panelSubMenu.Controls.Add(this.cbxCampo);
-            this.panelSubMenu.Controls.Add(this.lblFiltroPro);
-            this.panelSubMenu.Controls.Add(this.txtFiltrarA);
-            this.panelSubMenu.Controls.Add(this.lblCampo);
-            this.panelSubMenu.Controls.Add(this.lblCriterio);
-            this.panelSubMenu.Controls.Add(this.cbxCriterio);
-            this.panelSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenu.Location = new System.Drawing.Point(0, 220);
-            this.panelSubMenu.Name = "panelSubMenu";
-            this.panelSubMenu.Size = new System.Drawing.Size(180, 141);
-            this.panelSubMenu.TabIndex = 4;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panel2.Controls.Add(this.lblEmpezar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Enabled = false;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(180, 100);
+            this.panel2.TabIndex = 0;
+            // 
+            // lblEmpezar
+            // 
+            this.lblEmpezar.AutoSize = true;
+            this.lblEmpezar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmpezar.ForeColor = System.Drawing.Color.White;
+            this.lblEmpezar.Location = new System.Drawing.Point(3, 36);
+            this.lblEmpezar.Name = "lblEmpezar";
+            this.lblEmpezar.Size = new System.Drawing.Size(182, 17);
+            this.lblEmpezar.TabIndex = 1;
+            this.lblEmpezar.Text = "NOMBRE DE LA EMPRESA";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panel3.Controls.Add(this.btnClose);
+            this.panel3.Controls.Add(this.btnMinimize);
+            this.panel3.Controls.Add(this.brnMaximize);
+            this.panel3.Controls.Add(this.lblFiltro);
+            this.panel3.Controls.Add(this.txtFiltro);
+            this.panel3.Controls.Add(this.lblTitle);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(180, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1206, 100);
+            this.panel3.TabIndex = 18;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(1173, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(30, 30);
+            this.btnClose.TabIndex = 11;
+            this.btnClose.Text = "O";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.Location = new System.Drawing.Point(1107, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimize.TabIndex = 10;
+            this.btnMinimize.Text = "O";
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // brnMaximize
+            // 
+            this.brnMaximize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.brnMaximize.FlatAppearance.BorderSize = 0;
+            this.brnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.brnMaximize.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brnMaximize.ForeColor = System.Drawing.Color.White;
+            this.brnMaximize.Location = new System.Drawing.Point(1140, 0);
+            this.brnMaximize.Name = "brnMaximize";
+            this.brnMaximize.Size = new System.Drawing.Size(30, 30);
+            this.brnMaximize.TabIndex = 9;
+            this.brnMaximize.Text = "O";
+            this.brnMaximize.UseVisualStyleBackColor = true;
+            this.brnMaximize.Click += new System.EventHandler(this.brnMaximize_Click);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Mongolian Baiti", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(507, 36);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(167, 29);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "ARTICULOS";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // grillaArticulos
+            // 
+            this.grillaArticulos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grillaArticulos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.grillaArticulos.BackgroundColor = System.Drawing.Color.DimGray;
+            this.grillaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grillaArticulos.Location = new System.Drawing.Point(203, 127);
+            this.grillaArticulos.MultiSelect = false;
+            this.grillaArticulos.Name = "grillaArticulos";
+            this.grillaArticulos.Size = new System.Drawing.Size(733, 443);
+            this.grillaArticulos.TabIndex = 0;
+            this.grillaArticulos.UseWaitCursor = true;
+            this.grillaArticulos.SelectionChanged += new System.EventHandler(this.grillaArticulos_SelectionChanged);
+            this.grillaArticulos.Enter += new System.EventHandler(this.grillaArticulos_Enter);
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.Controls.Add(this.reset);
+            this.panel4.Controls.Add(this.grillaArticulos);
+            this.panel4.Location = new System.Drawing.Point(-8, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1403, 669);
+            this.panel4.TabIndex = 19;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1403, 669);
+            this.ClientSize = new System.Drawing.Size(1386, 669);
             this.Controls.Add(this.gbxDetalles);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -538,16 +538,16 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxDetalles.ResumeLayout(false);
             this.gbxDetalles.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panelSubMenu.ResumeLayout(false);
+            this.panelSubMenu.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
-            this.panelSubMenu.ResumeLayout(false);
-            this.panelSubMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
