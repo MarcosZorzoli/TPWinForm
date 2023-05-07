@@ -221,18 +221,18 @@ namespace TPWinForms
 
         private void btnBuscarFiltro_Click(object sender, EventArgs e)
         {
-            NegocioArticulo negocio = new NegocioArticulo();
-
+            NegocioArticulo servicio = new NegocioArticulo();
+            myList = servicio.Listar();
             try
             {
                 string campo = cbxCampo.SelectedItem.ToString();
                 string criterio = cbxCriterio.SelectedItem.ToString();
                 string filtro = txtFiltrarA.Text;
-                grillaArticulos.DataSource = negocio.Filtrar(campo, criterio, filtro);  
+                grillaArticulos.DataSource = servicio.Filtrar(campo, criterio, filtro);  
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Ingrese un dato válido");
             }
 
             hideSubMenu();

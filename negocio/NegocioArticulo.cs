@@ -285,7 +285,7 @@ namespace negocio
 
             try
             {
-                string consulta = "Select a.Id, Codigo, Nombre,a.Descripcion,a.IdMarca,idcategoria,c.DESCRIPCION as Categoria,m.DESCRIPCION as Marca,Precio from ARTICULOS a , categorias c, marcas m where a.idcategoria=c.ID and a.idMarca=m.id and ";
+                string consulta = "Select a.Id, a.Codigo, Nombre,a.Descripcion,a.IdMarca,a.IdCategoria,c.DESCRIPCION as Categoria,m.DESCRIPCION as Marca,Precio from ARTICULOS a , categorias c, marcas m where a.idcategoria=c.ID and a.idMarca=m.id and ";
 
                 if (campo == "Id")
                 {
@@ -319,7 +319,7 @@ namespace negocio
                             break;
 
                         case "Contiene":
-                            consulta += "Nombre like '[%" + filtro + "%]' ";
+                            consulta += "Nombre like '%[" + filtro + "]%' ";
                             break;
 
                     }
@@ -329,15 +329,15 @@ namespace negocio
                     switch (criterio)
                     {
                         case "Comienza con":
-                            consulta += "Descripcion like '" + filtro + "%' ";
+                            consulta += "a.Descripcion like '" + filtro + "%' ";
                             break;
 
                         case "Termina con":
-                            consulta += "Descripcion like %'" + filtro + "' ";
+                            consulta += "a.Descripcion like '%" + filtro + "' ";
                             break;
 
                         case "Contiene":
-                            consulta += "Descripcion like %'" + filtro + "%' ";
+                            consulta += "a.Descripcion like '%" + filtro + "%' ";
                             break;
 
                     }
