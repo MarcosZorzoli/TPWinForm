@@ -114,7 +114,7 @@ namespace TPWinForms
 
         private void reset_Click(object sender, EventArgs e)
         {
-
+            txtFiltro.Text = "";
             Cargar();
         }
 
@@ -142,6 +142,7 @@ namespace TPWinForms
             if(filtro!=""&&filtro.Length>=1)
             {
                 listaFiltro = myList.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper())||x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()));
+                myList= listaFiltro;
             }
             else
             {
@@ -228,7 +229,8 @@ namespace TPWinForms
                 string campo = cbxCampo.SelectedItem.ToString();
                 string criterio = cbxCriterio.SelectedItem.ToString();
                 string filtro = txtFiltrarA.Text;
-                grillaArticulos.DataSource = servicio.Filtrar(campo, criterio, filtro);  
+                myList = servicio.Filtrar(campo, criterio, filtro);
+                grillaArticulos.DataSource=myList;
             }
             catch(Exception)
             {
