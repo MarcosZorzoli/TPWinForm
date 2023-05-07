@@ -61,7 +61,7 @@
             this.btnAboutUs = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblEmpezar = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -75,6 +75,7 @@
             this.panelSubMenu.SuspendLayout();
             this.panelSubMenuAgregar.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).BeginInit();
             this.panel4.SuspendLayout();
@@ -471,7 +472,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panel2.Controls.Add(this.lblEmpezar);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Enabled = false;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -479,20 +480,19 @@
             this.panel2.Size = new System.Drawing.Size(180, 100);
             this.panel2.TabIndex = 0;
             // 
-            // lblEmpezar
+            // pictureBox1
             // 
-            this.lblEmpezar.AutoSize = true;
-            this.lblEmpezar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmpezar.ForeColor = System.Drawing.Color.White;
-            this.lblEmpezar.Location = new System.Drawing.Point(3, 36);
-            this.lblEmpezar.Name = "lblEmpezar";
-            this.lblEmpezar.Size = new System.Drawing.Size(182, 17);
-            this.lblEmpezar.TabIndex = 1;
-            this.lblEmpezar.Text = "NOMBRE DE LA EMPRESA";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(7, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(162, 97);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
             this.panel3.Controls.Add(this.btnClose);
             this.panel3.Controls.Add(this.btnMinimize);
             this.panel3.Controls.Add(this.brnMaximize);
@@ -604,6 +604,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormApp";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxDetalles.ResumeLayout(false);
@@ -614,7 +615,7 @@
             this.panelSubMenu.PerformLayout();
             this.panelSubMenuAgregar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grillaArticulos)).EndInit();
@@ -649,7 +650,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblEmpezar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnAboutUs;
@@ -664,6 +664,7 @@
         private System.Windows.Forms.Button btnAgregarArticulo;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panelSubMenu;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

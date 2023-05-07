@@ -33,7 +33,7 @@ namespace TPWinForms
             cbxCampo.Items.Add("Descripción");
             NegocioArticulo servicio = new NegocioArticulo();
             myList = servicio.Listar();
-           
+           this.WindowState = FormWindowState.Maximized;
 
 
             grillaArticulos.DataSource = myList;
