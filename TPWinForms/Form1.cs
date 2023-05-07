@@ -139,7 +139,7 @@ namespace TPWinForms
         {
             List<Articulo> listaFiltro;
             string filtro = txtFiltro.Text;
-            if(filtro!=""&&filtro.Length>=2)
+            if(filtro!=""&&filtro.Length>=1)
             {
                 listaFiltro = myList.FindAll(x => x.Nombre.ToUpper().Contains(filtro.ToUpper()) || x.Descripcion.ToUpper().Contains(filtro.ToUpper()) || x.Marca.Descripcion.ToUpper().Contains(filtro.ToUpper())||x.Categoria.Descripcion.ToUpper().Contains(filtro.ToUpper()));
             }

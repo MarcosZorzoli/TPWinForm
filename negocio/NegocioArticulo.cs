@@ -311,15 +311,15 @@ namespace negocio
                     switch (criterio)
                     {
                         case "Comienza con":
-                            consulta += "Nombre like '[" + filtro + "]%' ";
+                            consulta += "Nombre like '" + filtro + "%' ";
                             break;
 
                         case "Termina con":
-                            consulta += "Nombre like '%[" + filtro + "]' ";
+                            consulta += "Nombre like '%" + filtro + "' ";
                             break;
 
                         case "Contiene":
-                            consulta += "Nombre like '%[" + filtro + "]%' ";
+                            consulta += "Nombre like '%" + filtro + "%' ";
                             break;
 
                     }
