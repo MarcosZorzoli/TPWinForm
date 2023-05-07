@@ -500,8 +500,8 @@
             this.grillaArticulos.BackgroundColor = System.Drawing.Color.DimGray;
             this.grillaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grillaArticulos.Location = new System.Drawing.Point(203, 127);
-            this.grillaArticulos.MultiSelect = false;
             this.grillaArticulos.Name = "grillaArticulos";
+            this.grillaArticulos.ReadOnly = true;
             this.grillaArticulos.Size = new System.Drawing.Size(733, 443);
             this.grillaArticulos.TabIndex = 0;
             this.grillaArticulos.UseWaitCursor = true;
