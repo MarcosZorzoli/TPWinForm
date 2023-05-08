@@ -305,8 +305,26 @@ namespace negocio
 
                     }
                 }
+                else if (campo == "Precio")
+                    {
+                        switch (criterio)
+                        {
+                            case "Mayor a":
+                                consulta += "Precio > " + filtro;
+                                break;
 
-                else if (campo == "Nombre")
+                            case "Menor a":
+                                consulta += "Precio< " + filtro;
+                                break;
+
+                            case "Igual a":
+                                consulta += "Precio = " + filtro;
+                                break;
+
+                        }
+                    }
+
+                    else if (campo == "Nombre")
                 {
                     switch (criterio)
                     {

@@ -31,6 +31,7 @@ namespace TPWinForms
             cbxCampo.Items.Add("Nombre");
             cbxCampo.Items.Add("Id");
             cbxCampo.Items.Add("Descripción");
+            cbxCampo.Items.Add("Precio");
             NegocioArticulo servicio = new NegocioArticulo();
             myList = servicio.Listar();
            this.WindowState = FormWindowState.Maximized;
@@ -243,7 +244,7 @@ namespace TPWinForms
         private void cbxCampo_SelectedIndexChanged(object sender, EventArgs e)
         {
             string opcion = cbxCampo.SelectedItem.ToString();
-            if(opcion=="Id")
+            if(opcion=="Id"||opcion=="Precio")
             {
                 cbxCriterio.Items.Clear();
                 cbxCriterio.Items.Add("Igual a");
